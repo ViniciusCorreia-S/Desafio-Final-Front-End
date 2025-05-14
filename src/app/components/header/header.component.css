@@ -1,3 +1,19 @@
-header {
-    background-color: #f0f0f0;
+
+nav {
+    width: 100%;
+    font-family: "Oswald", sans-serif;
+    gap: 20%;
+
+    img {
+        width: 10%;
+    }
+    #navbarNav {
+        width: max-content;
+        color: #fff;
+    }
+    form {
+        input {
+            width: 10rem;
+        }
+    }
 }
