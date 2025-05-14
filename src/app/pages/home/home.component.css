@@ -1,23 +1,18 @@
 main {
     height: 100vh;
+    background-color: aliceblue;
 }
 
 header {
-    position: absolute;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
-
-    app-header {
-        display: flex;
-    }
 }
 
-.caroseu img{
-    display: block;
-    width: 100vw;
-    background-color: red;
-    overflow: hidden;
-}
+/* .searchBar {
+    width: 100%;
+    display: flex;
+    background-color: darkblue;
+} */

@@ -1,0 +1,19 @@
+.searchBar {
+    width: 100%;
+    background-color: darkblue;
+}
+.form-outline {
+    width: 70%;
+    margin: 10px;
+    margin-left: 30px;
+}
+
+.catalog {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+table{
+    width: 80%;
+}
