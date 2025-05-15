@@ -6,23 +6,25 @@
 </div>
 <div class="header-container">
     <div class="logo">
-        NOVA<span class="logo-highlight">TECH</span><span class="logo-dot"></span>
+        SPEC<span class="logo-highlight">DRIVE</span><span class="logo-dot"></span>
     </div>
-    <button class="mobile-menu-btn">☰</button>
+    <button class="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+        </svg>
+    </button>
     <nav>
         <ul id="menu">
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Produtos</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Contato</a></li>
+            <!-- <li><a href="#">Início</a></li> -->
+             <button (click)="navigateHome()">Inicio</button>
+            <!-- <li><a href="#">Serviços</a></li> -->
+             <button (click)="navigateVehicles()">Veiculos</button>
+            <!-- <li><a href="#">Produtos</a></li> -->
+             <button>Test Drive</button>
         </ul>
     </nav>
 </div>
-<div class="content">
-<h1>Bem-vindo ao nosso site</h1>
-<p>Este é um exemplo de um header moderno com animações sutis. O header inclui um logo animado, menu de navegação com efeitos hover, e elementos flutuantes no fundo para criar um visual dinâmico e contemporâneo.</p>
-</div>
+
 
 <script>
     // Menu mobile toggle

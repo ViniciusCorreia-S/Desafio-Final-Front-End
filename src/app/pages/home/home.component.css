@@ -2,17 +2,3 @@ main {
     height: 100vh;
     background-color: aliceblue;
 }
-
-header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* .searchBar {
-    width: 100%;
-    display: flex;
-    background-color: darkblue;
-} */
