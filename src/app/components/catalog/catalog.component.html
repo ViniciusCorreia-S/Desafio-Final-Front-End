@@ -1,33 +1,51 @@
 <div class="car-container">
-  <div class="car-card" style="--order: 1">
-      <div class="car-image bg-1"></div>
-      <div class="badge">1</div>
-      <div class="car-info">
-          <h2 class="brand">FORD</h2>
-          <p class="model"></p>
-          <span class="year"></span>
-      </div>
-  </div>
+    <div class="car-card" style="--order: 1" (click)="navigateVehicles()">
+        <div class="car-image bg-1">
+            <img src="Img/ford-logo.jpg" alt="Logo ford">
+        </div>
+        <div class="badge">1</div>
+        <div class="car-info">
+            <h2 class="brand">FORD</h2>
+            <p class="model"></p>
+            <span class="year"></span>
+        </div>
+    </div>
 
-  <div class="car-card" style="--order: 2">
-      <div class="car-image bg-2"></div>
+    <div class="car-card" style="--order: 2" (click)="navigateVehicles()">
+      <div class="car-image bg-2">
+        <img src="Img/mercedes-logo.jpg" alt="Logo mercedes">
+      </div>
       <div class="badge">2</div>
       <div class="car-info">
           <h2 class="brand">Mercedes-Benz</h2>
           <p class="model"></p>
           <span class="year"></span>
       </div>
-  </div>
+    </div>
 
-  <div class="car-card" style="--order: 3">
-      <div class="car-image bg-3"></div>
+    <div class="car-card" style="--order: 3" (click)="navigateVehicles()">
+      <div class="car-image bg-3">
+        <img src="Img/bmw-logo.jpg" alt="Logo BMW">
+      </div>
       <div class="badge">3</div>
       <div class="car-info">
           <h2 class="brand">BMW</h2>
           <p class="model"></p>
           <span class="year"></span>
       </div>
-  </div>
+    </div>
+
+    <div class="car-card" style="--order: 4" (click)="navigateVehicles()">
+      <div class="car-image bg-4">
+        <img src="Img/porsche-logo.jpg" alt="Logo Porsche">
+      </div>
+      <div class="badge">4</div>
+      <div class="car-info">
+          <h2 class="brand">Porsche</h2>
+          <p class="model"></p>
+          <span class="year"></span>
+      </div>
+    </div>
 
 </div>
 

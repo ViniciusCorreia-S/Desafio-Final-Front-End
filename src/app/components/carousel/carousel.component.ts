@@ -123,4 +123,11 @@ export class CarouselComponent implements AfterViewInit {
       this.resetInterval();
     }
   }
+
+  scrollParaBaixo(): void {
+    window.scrollBy({
+      top: 600,
+      behavior: 'smooth'
+    });
+  }
 }

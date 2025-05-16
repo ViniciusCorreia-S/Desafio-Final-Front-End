@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class CatalogComponent {
 
+  constructor(private router: Router) {}
+
+  navigateVehicles(){
+    this.router.navigate(['/vehicles']);
+  }
 }

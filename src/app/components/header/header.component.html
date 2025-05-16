@@ -6,7 +6,8 @@
 </div>
 <div class="header-container">
     <div class="logo">
-        SPEC<span class="logo-highlight">DRIVE</span><span class="logo-dot"></span>
+        <!-- SPEC<span class="logo-highlight">DRIVE</span><span class="logo-dot"></span> -->
+        <img src="/Img/logo-specDrive.png" alt="logo"><span class="logo-dot"></span>
     </div>
     <button class="mobile-menu-btn">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -15,11 +16,8 @@
     </button>
     <nav>
         <ul id="menu">
-            <!-- <li><a href="#">Início</a></li> -->
              <button (click)="navigateHome()">Inicio</button>
-            <!-- <li><a href="#">Serviços</a></li> -->
              <button (click)="navigateVehicles()">Veiculos</button>
-            <!-- <li><a href="#">Produtos</a></li> -->
              <button>Test Drive</button>
         </ul>
     </nav>
@@ -27,7 +25,6 @@
 
 
 <script>
-    // Menu mobile toggle
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const menuList = document.querySelector('#menu');
     
@@ -35,7 +32,6 @@
         menuList.classList.toggle('active');
     });
 
-    // Animação adicional para o logo
     const logoText = document.querySelector('.logo-highlight');
     const colors = ['#66f2d5', '#ff7eb3', '#ffa23a', '#7afcff'];
     let colorIndex = 0;
