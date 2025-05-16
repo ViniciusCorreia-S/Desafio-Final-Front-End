@@ -19,4 +19,8 @@ export class HeaderComponent {
   navigateVehicles(){
     this.router.navigate(['/vehicles']);
   }
+
+  navigateCompareVehicles(){
+    this.router.navigate(['/compare-vehicles']);
+  }
 }

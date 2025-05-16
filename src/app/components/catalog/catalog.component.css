@@ -7,17 +7,23 @@
     transition: all 0.3s ease;
 }
 
+body{
+    background-color: white;
+}
+
 .car-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1400px;
-    margin: 80px;
-    /* background-color: #111827; */
+    gap: 10rem;
+    width: 100%;
+    padding-top: 80px;
+    padding: 10%;
 }
 
 .car-card {
-    background-color: #6B7280;
+    width: 500px;
+    border: solid 2px black;
+    background-color: #0284C7;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -35,7 +41,7 @@
 }
 
 .car-image {
-    height: 180px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -67,7 +73,7 @@
 .brand {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #f0f0f0;
+    color: #F9FAFB;
     margin-bottom: 0.5rem;
     position: relative;
     display: inline-block;
@@ -80,7 +86,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #0EA5E9;
+    background-color: #F9FAFB;
     transition: width 0.3s ease;
 }
 

@@ -17,7 +17,7 @@ export class CarouselComponent implements AfterViewInit {
 
   currentSlide: number = 0;
   slideInterval: any;
-  intervalTime: number = 5000;
+  intervalTime: number = 15000;
   animationId: number = 0;
 
   touchStartX = 0;
@@ -126,7 +126,7 @@ export class CarouselComponent implements AfterViewInit {
 
   scrollParaBaixo(): void {
     window.scrollBy({
-      top: 600,
+      top: 1300,
       behavior: 'smooth'
     });
   }

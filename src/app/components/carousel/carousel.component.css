@@ -43,7 +43,6 @@
   .carousel-slide.active {
     opacity: 1;
   }
-  
   .slide-image {
     position: absolute;
     top: 0;
@@ -55,7 +54,7 @@
   }
   
   .slide-content {
-    max-width: 600px;
+    max-width: 700px;
     color: #f0f0f0;
     z-index: 1;
     transform: translateY(50px);
@@ -77,7 +76,7 @@
   }
   
   .slide-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 30px;
     max-width: 80%;
@@ -85,13 +84,14 @@
   
   .slide-btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 20px 50px;
     background-color: transparent;
     border: solid 2px #ffffff;
-    border-radius: 20px;
+    border-radius: 30px;
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 1px;
     transition: all 0.3s ease;
@@ -165,6 +165,7 @@
   
   .current-slide {
     font-size: 2rem;
+    color: white;
     margin-right: 5px;
   }
   
