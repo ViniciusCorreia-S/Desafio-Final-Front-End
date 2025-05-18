@@ -1,0 +1,29 @@
+<div class="catalog-container">
+  <h2>Catálogo de Veículos</h2>
+  <p>Selecione os veículos para ver detalhes no dashboard</p>
+  
+  <div class="cars-grid">
+    <div class="car-card" *ngFor="let car of cars">
+      <div class="car-header">
+        <label class="checkbox-container">
+          <input type="checkbox" [checked]="car.selected" (change)="toggleSelection(car.id)">
+        </label>
+        <h3>{{car.brand}} {{car.model}}</h3>
+      </div>
+      
+      <div class="car-image">
+        <img [src]="car.imageUrl" [alt]="car.brand + ' ' + car.model">
+      </div>
+      
+      <div class="car-details">
+        <p><strong>Ano:</strong> {{car.year}}</p>
+        <p><strong>Preço:</strong> R$ {{car.price}}</p>
+        <p>{{car.description}}</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="dashboard-router">
+    <button (click)="dashboardRouter()">Ver Dashboard</button>
+  </div>
+</div>
