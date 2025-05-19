@@ -1,41 +1,30 @@
 <body>
-  <div class="car-container">
-      <div class="car-card" style="--order: 1" (click)="navigateVehicles()">
-          <div class="car-image bg-1">
-              <img src="https://applescoop.org/image/wallpapers/mac/ford-mustang-car-brands-logo-glow-28-09-2024-1727564716-hd-wallpaper.jpg" alt="Logo ford">
-          </div>
-          <div class="badge">1</div>
-          <div class="car-info">
-              <h2 class="brand">FORD</h2>
-              <p class="model"></p>
-              <span class="year"></span>
-          </div>
+  <div class="catalog-content">
+    <h1>As Marcas que Movem Você</h1>
+    <p>Explore as marcas que definem inovação, desempenho e estilo!</p>
+    
+    <div class="car-brands">
+
+      <div class="brand-item" (click)="navigateVehicles()">
+        <div class="brand-img">
+          <img src="Img/BMW-logo.png" alt="BMW" />
+        </div>
+        <div class="brand-name">BMW</div>
+      </div>
+      
+      <div class="brand-item" (click)="navigateVehicles()">
+        <div class="brand-img">
+          <img src="Img/Ford-logo.png" alt="Ford" />
+        </div>
+        <div class="brand-name">Ford</div>
       </div>
 
-      <div class="car-card" style="--order: 2" (click)="navigateVehicles()">
-        <div class="car-image bg-2">
-          <img src="https://vintageclassicos.com.br/wp-content/uploads/2024/05/Logotipo-da-Mercedes-Benz-2.jpg" alt="Logo mercedes">
+      <div class="brand-item" (click)="navigateVehicles()">
+        <div class="brand-img">
+          <img src="Img/Mercedes-logo.png" alt="Mercedes" />
         </div>
-        <div class="badge">2</div>
-        <div class="car-info">
-            <h2 class="brand">Mercedes-Benz</h2>
-            <p class="model"></p>
-            <span class="year"></span>
-        </div>
+        <div class="brand-name">Mercedes</div>
       </div>
-
-      <div class="car-card" style="--order: 3" (click)="navigateVehicles()">
-        <div class="car-image bg-3">
-          <img src="https://t4.ftcdn.net/jpg/14/37/59/49/360_F_1437594976_GHJg77V3NNPcQBrdyD5N56hP3ot1julx.jpg" alt="Logo BMW">
-        </div>
-        <div class="badge">3</div>
-        <div class="car-info">
-            <h2 class="brand">BMW</h2>
-            <p class="model"></p>
-            <span class="year"></span>
-        </div>
-      </div>
-
-
+    </div>
   </div>
 </body>

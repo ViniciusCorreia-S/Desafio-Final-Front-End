@@ -6,38 +6,19 @@
 </div>
 <div class="header-container">
     <div class="logo">
-        <img src="/Img/logo-specDrive.png" alt="logo"><span class="logo-dot"></span>
+        <img src="/Img/logo-specDrive.png" alt="logo" (click)="navigateHome()"><span class="logo-dot"></span>
     </div>
-    <button class="mobile-menu-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-        </svg>
-    </button>
-    <nav>
-        <ul id="menu">
-            <button (click)="navigateHome()">Inicio</button>
-            <button (click)="navigateVehicles()">Veiculos</button>
-            <button (click)="navigateCompareVehicles()">Detalhes Veiculos</button>
-            <button>Test Drive</button>
+
+    <div class="mobile-menu-btn">
+        <app-side-bar></app-side-bar>
+    </div>
+
+    <nav id="menu">
+        <ul>
+            <button (click)="navigateHome()">HOME</button>
+            <button (click)="navigateVehicles()">VEÍCULOS</button>
+            <button (click)="navigateCompareVehicles()">COMPARE</button>
+            <button (click)="navigateTestDrive()">TEST DRIVE</button>
         </ul>
     </nav>
 </div>
-
-
-<script>
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const menuList = document.querySelector('#menu');
-    
-    menuBtn.addEventListener('click', () => {
-        menuList.classList.toggle('active');
-    });
-
-    const logoText = document.querySelector('.logo-highlight');
-    const colors = ['#66f2d5', '#ff7eb3', '#ffa23a', '#7afcff'];
-    let colorIndex = 0;
-
-    setInterval(() => {
-        colorIndex = (colorIndex + 1) % colors.length;
-        logoText.style.color = colors[colorIndex];
-    }, 3000);
-</script>

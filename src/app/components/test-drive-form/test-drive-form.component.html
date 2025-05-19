@@ -1,0 +1,149 @@
+<div class="container">
+  <div class="success-message" *ngIf="showSuccess">
+    <p><strong>Solicitação enviada com sucesso!</strong> Entraremos em contato em breve para confirmar seu test drive.</p>
+  </div>
+  
+  <p>Quer sentir a emoção de dirigir o carro dos seus sonhos? Preencha o formulário abaixo e agende um test drive com um de nossos veículos premium. Nossa equipe entrará em contato para confirmar sua experiência.</p>
+  
+  <form [formGroup]="testDriveForm" (ngSubmit)="onSubmit()">
+    <h2>Informações Pessoais</h2>
+    
+    <div class="form-group">
+      <label for="name">Nome Completo*</label>
+      <input type="text" id="name" formControlName="name">
+      <div class="error-message" *ngIf="testDriveForm.get('name')?.invalid && testDriveForm.get('name')?.touched">
+        Nome completo é obrigatório
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">E-mail*</label>
+      <input type="email" id="email" formControlName="email">
+      <div class="error-message" *ngIf="testDriveForm.get('email')?.invalid && testDriveForm.get('email')?.touched">
+        E-mail válido é obrigatório
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="phone">Telefone*</label>
+      <input type="tel" id="phone" formControlName="phone" mask="(00) 0 0000-0000" placeholder="(00) 00000-0000">
+      <div class="error-message" *ngIf="testDriveForm.get('phone')?.invalid && testDriveForm.get('phone')?.touched">
+        Telefone é obrigatório
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="CPF">CPF*</label>
+      <input type="text" id="CPF" formControlName="CPF" mask="000.000.000-00" placeholder="000.000.000-00">
+      <div class="error-message" *ngIf="testDriveForm.get('CPF')?.invalid && testDriveForm.get('CPF')?.touched">
+        CPF é obrigatório
+      </div>
+    </div>
+    
+    <h2>Dados para Test Drive</h2>
+    
+    <div class="form-group">
+      <label for="brand">Marca de Interesse*</label>
+      <select id="brand" formControlName="brand">
+        <option value="">Selecione uma marca</option>
+        <option value="bmw">BMW</option>
+        <option value="mercedes">Mercedes-Benz</option>
+        <option value="ford">Ford</option>
+      </select>
+      <div class="error-message" *ngIf="testDriveForm.get('brand')?.invalid && testDriveForm.get('brand')?.touched">
+        Selecione uma marca
+      </div>
+    </div>
+    
+    <div class="form-group" *ngIf="selectedBrand === 'bmw'">
+      <label for="bmwModel">Modelo BMW*</label>
+      <select id="bmwModel" formControlName="bmwModel">
+        <option value="">Selecione um modelo</option>
+        <option *ngFor="let model of bmwModels" [value]="model.value">{{ model.name }}</option>
+      </select>
+      <div class="error-message" *ngIf="testDriveForm.get('bmwModel')?.invalid && testDriveForm.get('bmwModel')?.touched">
+        Selecione um modelo
+      </div>
+    </div>
+    
+    <div class="form-group" *ngIf="selectedBrand === 'mercedes'">
+      <label for="mercedesModel">Modelo Mercedes-Benz*</label>
+      <select id="mercedesModel" formControlName="mercedesModel">
+        <option value="">Selecione um modelo</option>
+        <option *ngFor="let model of mercedesModels" [value]="model.value">{{ model.name }}</option>
+      </select>
+      <div class="error-message" *ngIf="testDriveForm.get('mercedesModel')?.invalid && testDriveForm.get('mercedesModel')?.touched">
+        Selecione um modelo
+      </div>
+    </div>
+    
+    <div class="form-group" *ngIf="selectedBrand === 'ford'">
+      <label for="fordModel">Modelo Ford*</label>
+      <select id="fordModel" formControlName="fordModel">
+        <option value="">Selecione um modelo</option>
+        <option *ngFor="let model of fordModels" [value]="model.value">{{ model.name }}</option>
+      </select>
+      <div class="error-message" *ngIf="testDriveForm.get('fordModel')?.invalid && testDriveForm.get('fordModel')?.touched">
+        Selecione um modelo
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="preferredDate">Data Preferencial*</label>
+      <input type="date" id="preferredDate" formControlName="preferredDate">
+      <div class="error-message" *ngIf="testDriveForm.get('preferredDate')?.invalid && testDriveForm.get('preferredDate')?.touched">
+        Selecione uma data
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="preferredTime">Horário Preferencial*</label>
+      <select id="preferredTime" formControlName="preferredTime">
+        <option value="">Selecione um horário</option>
+        <option value="manha">Manhã (09:00 - 12:00)</option>
+        <option value="tarde">Tarde (13:00 - 18:00)</option>
+      </select>
+      <div class="error-message" *ngIf="testDriveForm.get('preferredTime')?.invalid && testDriveForm.get('preferredTime')?.touched">
+        Selecione um horário
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Possui CNH?*</label>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" id="cnh-yes" formControlName="hasCNH" value="sim">
+          <label for="cnh-yes">Sim</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" id="cnh-no" formControlName="hasCNH" value="nao">
+          <label for="cnh-no">Não</label>
+        </div>
+      </div>
+      <div class="error-message" *ngIf="testDriveForm.get('hasCNH')?.invalid && testDriveForm.get('hasCNH')?.touched">
+        Informe se possui CNH
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="comments">Comentários Adicionais</label>
+      <textarea id="comments" formControlName="comments" rows="4"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <div class="radio-option">
+        <input type="checkbox" id="terms" formControlName="terms">
+        <label for="terms">Concordo com os termos e condições para o test drive*</label>
+      </div>
+      <div class="error-message" *ngIf="testDriveForm.get('terms')?.invalid && testDriveForm.get('terms')?.touched">
+        Você precisa concordar com os termos
+      </div>
+    </div>
+    
+    <button type="submit">Agendar Test Drive</button>
+  </form>
+</div>
+
+<footer>
+  <p>&copy; 2025 SpecDrive. Todos os direitos reservados.</p>
+</footer>
