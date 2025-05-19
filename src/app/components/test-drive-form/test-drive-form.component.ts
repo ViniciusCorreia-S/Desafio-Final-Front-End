@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup , Validators , ReactiveFormsModule } from '@angular/forms';
-import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-test-drive-form',
@@ -11,7 +11,6 @@ import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 })
 export class TestDriveFormComponent implements OnInit {
   testDriveForm: FormGroup;
-  // minDate: string;
   showSuccess = false;
   
   selectedBrand: 'bmw' | 'mercedes' | 'ford' | '' = '';
@@ -48,30 +47,16 @@ export class TestDriveFormComponent implements OnInit {
       comments: [''],
       terms: [false, Validators.requiredTrue]
     });
-    
-    // Definir data mínima para o agendamento
-    // const today = new Date();
-    // const yyyy = today.getFullYear();
-    // let mm: string | number = today.getMonth() + 1;
-    // let dd: string | number = today.getDate();
-    
-    // if (dd < 10) dd = '0' + dd;
-    // if (mm < 10) mm = '0' + mm;
-    
-    // this.minDate = `${yyyy}-${mm}-${dd}`;
   }
   
   ngOnInit(): void {
-    // validadores dinâmicos
     this.testDriveForm.get('brand')?.valueChanges.subscribe(brand => {
       this.selectedBrand = brand;
       
-      // Resetar validadores
       this.testDriveForm.get('bmwModel')?.clearValidators();
       this.testDriveForm.get('mercedesModel')?.clearValidators();
       this.testDriveForm.get('fordModel')?.clearValidators();
       
-      // validadores para o modelo da marca
       if (brand === 'bmw') {
         this.testDriveForm.get('bmwModel')?.setValidators(Validators.required);
       } else if (brand === 'mercedes') {
@@ -80,7 +65,6 @@ export class TestDriveFormComponent implements OnInit {
         this.testDriveForm.get('fordModel')?.setValidators(Validators.required);
       }
       
-      // Atualizar validadores
       this.testDriveForm.get('bmwModel')?.updateValueAndValidity();
       this.testDriveForm.get('mercedesModel')?.updateValueAndValidity();
       this.testDriveForm.get('fordModel')?.updateValueAndValidity();
@@ -90,6 +74,8 @@ export class TestDriveFormComponent implements OnInit {
   onSubmit(): void {
     if (this.testDriveForm.valid) {
       console.log('Formulário enviado:', this.testDriveForm.value);
+
+      localStorage.setItem('dadosUsuario' ,JSON.stringify(this.testDriveForm.value));
       
       this.showSuccess = true;
       

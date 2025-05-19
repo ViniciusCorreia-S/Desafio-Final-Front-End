@@ -12,36 +12,63 @@
         <div class="stat-value">{{selectedCars.length}}</div>
       </div>
       
-      <div class="stat-card">
+      <!-- <div class="stat-card">
         <h3>Valor Total</h3>
         <div class="stat-value">R$ {{totalValue}}</div>
-      </div>
+      </div> -->
       
-      <div class="stat-card">
+      <!-- <div class="stat-card">
         <h3>Ano Médio</h3>
         <div class="stat-value">{{averageYear}}</div>
-      </div>
+      </div> -->
     </div>
     
     <div class="selected-cars-list">
       <h3>Detalhes dos Veículos</h3>
       
       <table>
-        <thead>
+        <tbody *ngFor="let car of selectedCars">
+          <tr>
+            <th style="background-color: #fff;">&nbsp;</th>
+            <td><img [src]="car.imageUrl" alt="{{car.brand}} {{car.model}}" class="car-image"></td>
+          </tr>
           <tr>
             <th>Marca</th>
-            <th>Modelo</th>
-            <th>Ano</th>
-            <th>Preço</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let car of selectedCars">
             <td>{{car.brand}}</td>
+          </tr>
+          <tr>
+            <th>Modelo</th>
             <td>{{car.model}}</td>
+          </tr>
+          <tr>
+            <th>Ano</th>
             <td>{{car.year}}</td>
+          </tr>
+          <tr>
+            <th>Preço</th>
             <td>R$ {{car.price | number:'1.2'}}</td>
           </tr>
+          <tr>
+            <th>Potência</th>
+            <td>{{car.power}} CV</td>
+          </tr>
+          <tr>
+            <th>Torque</th>
+            <td>{{car.torque}} Nm</td>
+          </tr>
+          <tr>
+            <th>Motorização</th>
+            <td>{{car.motorization}} {{car.motorizationL}}L</td>
+          </tr>
+          <tr>
+            <th>Aceleração <br> (0-100 km/h)</th>
+            <td>{{car.acceleration}} seg</td>
+          </tr>
+          <tr>
+            <th>Velocidade máxima</th>
+            <td>{{car.vmax}} km/h</td>
+          </tr>
+          <tr><td colspan="2"><hr></td></tr>
         </tbody>
       </table>
     </div>

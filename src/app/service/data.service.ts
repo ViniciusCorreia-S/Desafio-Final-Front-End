@@ -7,16 +7,6 @@ import { Car } from '../models/Vehicle.model';
 })
 export class DataService {
 
-  // constructor(private http : HttpClient) { }
-
-  // private urlData = 'http://localhost:3001/listCars'
-
-  // getData(): Observable<Car[]> { 
-  //   return this.http.get<{ dataVehicle : Car[]}>(this.urlData)
-  //     .pipe(map((resp) => resp.dataVehicle));
-  // }
-
-  // Dados de exemplo - em um caso real, você buscaria de uma API
   private carsData: Car[] = [
     {
       id: 1,
@@ -24,6 +14,12 @@ export class DataService {
       model: 'X6 M Competition',
       year: 2023,
       price: 1298950,
+      power: 625,
+      torque: 750,
+      motorization: 'V8',
+      motorizationL: 4.4,
+      acceleration: 3.8,
+      vmax: 290,
       imageUrl: 'Img/BMW X6 M Competition-Photoroom.png',
       description: '',
       selected: false
@@ -34,6 +30,12 @@ export class DataService {
       model: 'M4 CS',
       year: 2024,
       price: 1399950,
+      power: 550,
+      torque: 660,
+      motorization: 'S58',
+      motorizationL: 3.0,
+      acceleration: 3.4,
+      vmax: 302,
       imageUrl: 'Img/BMW M4 CS.png',
       description: '',
       selected: false
@@ -44,6 +46,12 @@ export class DataService {
       model: 'Mustang GT',
       year: 2024,
       price: 549000,
+      power: 492,
+      torque: 564,
+      motorization: 'Coyote V8',
+      motorizationL: 5.0,
+      acceleration: 4.3,
+      vmax: 250,
       imageUrl: 'Img/Mustang GT.png',
       description: '',
       selected: false
@@ -54,6 +62,12 @@ export class DataService {
       model: 'Ranger XLS V6',
       year: 2025,
       price: 238900,
+      power: 250,
+      torque: 600,
+      motorization: 'V6',
+      motorizationL: 3.0,
+      acceleration: 9.2,
+      vmax: 187,
       imageUrl: 'Img/Ford Ranger XLS V6.png',
       description: '',
       selected: false
@@ -64,6 +78,12 @@ export class DataService {
       model: 'EQA SUV',
       year: 2022,
       price: 399900,
+      power: 	190,
+      torque: 375,
+      motorization: 'Híbrido / Elétrico',
+      motorizationL: 66.5,
+      acceleration: 8.6,
+      vmax: 160,
       imageUrl: 'Img/Mercedes EQA SUV.png',
       description: '',
       selected: false
@@ -74,17 +94,21 @@ export class DataService {
       model: 'AMG CLA Coupé',
       year: 2019,
       price:  297900,
+      power: 306,
+      torque: 400,
+      motorization: 'Turbo',
+      motorizationL: 2.0,
+      acceleration: 4.9,
+      vmax: 250,
       imageUrl: 'Img/Mercedes-AMG CLA Coupé.png',
       description: '',
       selected: false
     }
   ];
 
-  // Subjects para gerenciar carros e carros selecionados
   private cars = new BehaviorSubject<Car[]>(this.carsData);
   private selectedCars = new BehaviorSubject<Car[]>([]);
 
-  // Observables que os componentes podem assinar
   cars$ = this.cars.asObservable();
   selectedCars$ = this.selectedCars.asObservable();
 
@@ -108,7 +132,6 @@ export class DataService {
     
     this.cars.next(updatedCars);
     
-    // Atualiza a lista de carros selecionados
     const selected = updatedCars.filter(car => car.selected);
     this.selectedCars.next(selected);
   }

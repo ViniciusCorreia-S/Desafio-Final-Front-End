@@ -84,18 +84,25 @@ table {
   margin-top: 15px;
 }
 
+table td .car-image {
+  width: 40%;
+  background-color: transparent;
+}
+
 th {
   text-align: left;
   padding: 12px;
   background-color: #f4f4f4;
   color: #333;
   font-weight: 600;
+  font-size: 1.2rem;
 }
 
 td {
   padding: 12px;
   border-top: 1px solid #eee;
   color: #666;
+  font-size: 1.2rem;
 }
 
 tr:hover td {

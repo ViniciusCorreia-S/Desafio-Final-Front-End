@@ -6,6 +6,12 @@ export interface Car {
   model: string;
   year: number;
   price: number;
+  power: number;
+  torque: number;
+  motorization: string;
+  motorizationL: number;
+  acceleration: number;
+  vmax: number;
   imageUrl: string;
   description: string;
   selected?: boolean;
