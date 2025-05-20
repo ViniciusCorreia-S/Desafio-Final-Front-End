@@ -82,8 +82,6 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
-  /* border: solid 1px #ccc; */
-
 }
 
 table td .car-image {
@@ -131,4 +129,11 @@ tr:hover td {
 
 .back-router button:hover {
   background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+
+  table td .car-image {
+    width: 100%;
+  }
 }
