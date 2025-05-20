@@ -10,7 +10,7 @@ h2 {
   font-size: 2.2rem;
   font-weight: 500;
   margin-bottom: 10px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montsettat", sans-serif;
 }
 
 p {
@@ -46,7 +46,7 @@ p {
   align-items: center;
   padding: 15px;
   background-color: #ffffff;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 
@@ -116,7 +116,7 @@ p {
   margin: 8px 0;
 }
 
-.dashboard-router {
+/* .dashboard-router {
   text-align: center;
   margin-top: 20px;
 }
@@ -125,6 +125,7 @@ p {
   display: inline-block;
   padding: 15px 28px;
   font-size: 1.5rem;
+  font-family: 'Oswald', sans-serif;
   background-color: #2196F3;
   color: white;
   text-decoration: none;
@@ -136,4 +137,29 @@ p {
 
 .dashboard-router button:hover {
   background-color: #0b7dda;
+} */
+
+.dashboard-router {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.dashboard-router button {
+  padding: 12px 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  background-color: #2196F3;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.dashboard-router:hover button {
+  background-color: #0d69b4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }

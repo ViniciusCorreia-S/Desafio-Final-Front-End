@@ -18,7 +18,7 @@ header {
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    font-family: 'Montserrat', 'Roboto', sans-serif;
+    font-family: "Montsettat";
 }
 
 .header-container {
@@ -39,7 +39,6 @@ header {
     position: relative;
     display: flex;
     align-items: center;
-    font-family: "Poppins", sans-serif;
     cursor: pointer;
     img {
         width: 270px;
@@ -70,7 +69,7 @@ nav button {
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
-    font-family: "Poppins", sans-serif;
+    font-family: "Montserrat", sans-serif;
     position: relative;
     padding: 0.5rem 0;
     transition: all 0.3s ease;
