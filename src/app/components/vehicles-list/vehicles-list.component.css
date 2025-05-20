@@ -1,18 +1,8 @@
-:root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
-    --accent-color: #e74c3c;
-    --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --radius: 8px;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -49,47 +39,6 @@ header p {
     padding: 0 1rem;
 }
 
-/* .filters {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);;
-    margin-bottom: 2rem;
-}
-
-.filter-title {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-    display: flex;
-    align-items: center;
-}
-
-.filter-title svg {
-    margin-right: 0.5rem;
-}
-
-.filter-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.filter-button {
-    background-color: #ecf0f1;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
-
-.filter-button:hover, .filter-button.active {
-    background-color: #3498db;
-    color: white;
-} */
-
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -98,7 +47,7 @@ header p {
 
 .card {
     background-color: white;
-    border-radius: var(--radius);
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -177,7 +126,7 @@ header p {
     color: white;
     border: none;
     padding: 0.5rem 1rem;
-    border-radius: var(--radius);
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 500;
     transition: background-color 0.3s ease;

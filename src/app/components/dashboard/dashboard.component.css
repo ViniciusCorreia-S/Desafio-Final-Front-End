@@ -82,6 +82,8 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
+  /* border: solid 1px #ccc; */
+
 }
 
 table td .car-image {

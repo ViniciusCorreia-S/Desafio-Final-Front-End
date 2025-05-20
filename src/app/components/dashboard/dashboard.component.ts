@@ -20,23 +20,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getSelectedCars().subscribe(cars => {
       this.selectedCars = cars;
-      this.calculateStatistics();
     });
-  }
-
-  private calculateStatistics(): void {
-    if (this.selectedCars.length === 0) {
-      this.totalValue = 0;
-      this.averageYear = 0;
-      return;
-    }
-
-    // Calcula o valor total
-    this.totalValue = this.selectedCars.reduce((sum, car) => sum + car.price, 0);
-    
-    // Calcula o ano médio
-    const yearSum = this.selectedCars.reduce((sum, car) => sum + car.year, 0);
-    this.averageYear = yearSum / this.selectedCars.length;
   }
 
   backRouter() {

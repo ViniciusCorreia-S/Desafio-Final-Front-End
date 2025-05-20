@@ -133,7 +133,7 @@
     <div class="form-group">
       <div class="radio-option">
         <input type="checkbox" id="terms" formControlName="terms">
-        <label for="terms">Concordo com os termos e condições para o test drive*</label>
+        <label for="terms">Concordo com os <a (click)="navigationTerms()">Termos e Condições</a>*</label>
       </div>
       <div class="error-message" *ngIf="testDriveForm.get('terms')?.invalid && testDriveForm.get('terms')?.touched">
         Você precisa concordar com os termos

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup , Validators , ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective } from 'ngx-mask';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-test-drive-form',
@@ -30,7 +31,7 @@ export class TestDriveFormComponent implements OnInit {
     { value: 'ranger xls v6', name: 'Ranger XLS V6' }
   ];
   
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder , private router: Router) {
     
     this.testDriveForm = this.fb.group({
       name: ['', Validators.required],
@@ -100,5 +101,9 @@ export class TestDriveFormComponent implements OnInit {
       return this.testDriveForm.get('fordModel')?.value;
     }
     return '';
+  }
+
+  navigationTerms() {
+    this.router.navigate(['/termos-e-condicoes']);
   }
 }

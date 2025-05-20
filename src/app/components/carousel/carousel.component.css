@@ -191,4 +191,8 @@ body {
     padding: 15px 30px;
     font-size: 1rem;
   }
+
+  .carousel-control {
+    display: none;
+  }
 }

@@ -23,11 +23,18 @@ h2 {
 
 p {
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .form-group {
   margin-bottom: 20px;
+}
+
+.form-group a {
+  color: #0078d3;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 label {
