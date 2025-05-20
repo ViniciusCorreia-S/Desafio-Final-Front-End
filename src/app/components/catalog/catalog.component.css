@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', 'Roboto', sans-serif;
 }
 
 body {
-    background-color: #f8f9fa;
+    background-color: #fff;
+    height: 55%;
 }
 
 .catalog-content {
@@ -16,7 +16,7 @@ body {
     background: linear-gradient(135deg, #6B7280 0%, #111827 100%);
     border-radius: 15px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    color: white;
+    color: #fff;
     text-align: center;
     position: relative;
     overflow: hidden;
