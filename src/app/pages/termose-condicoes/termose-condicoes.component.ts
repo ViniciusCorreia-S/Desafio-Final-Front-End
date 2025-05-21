@@ -9,4 +9,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 })
 export class TermoseCondicoesComponent {
 
+  returnTop() {
+    window.scrollTo(0, 0);
+  }
 }

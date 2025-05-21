@@ -105,5 +105,6 @@ export class TestDriveFormComponent implements OnInit {
 
   navigationTerms() {
     this.router.navigate(['/termos-e-condicoes']);
+    window.scrollTo(0, 0);
   }
 }
