@@ -135,5 +135,25 @@ export class DataService {
     const selected = updatedCars.filter(car => car.selected);
     this.selectedCars.next(selected);
   }
+
+  selectAllCars(): void {
+    const updatedCars = this.cars.value.map(car => {
+      return { ...car, selected: true };
+    });
+    
+    this.cars.next(updatedCars);
+    
+    const selected = updatedCars.filter(car => car.selected);
+    this.selectedCars.next(selected);
+  }
+
+  deselectAllCars(): void {
+    const updatedCars = this.cars.value.map(car => {
+      return { ...car, selected: false };
+    });
+    
+    this.cars.next(updatedCars);
+    this.selectedCars.next([]);
+  }
 }
 

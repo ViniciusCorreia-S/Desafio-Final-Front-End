@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-car-catalog',
+  selector: 'app-car-catalog-copy',
   imports: [ CommonModule ],
   templateUrl: './car-catalog.component.html',
   styleUrls: ['./car-catalog.component.css']
@@ -26,11 +26,21 @@ export class CarCatalogComponent implements OnInit {
   }
 
   selectAllCars(): void {
-    this.dataService.selectAllCars();
+    const updatedCars = this.cars.map(car => {
+      if (!car.selected) {
+        this.dataService.toggleCarSelection(car.id);
+      }
+      return car;
+    });
   }
 
   deselectAllCars(): void {
-    this.dataService.deselectAllCars();
+    const updatedCars = this.cars.map(car => {
+      if (car.selected) {
+        this.dataService.toggleCarSelection(car.id);
+      }
+      return car;
+    });
   }
 
   dashboardRouter(){
