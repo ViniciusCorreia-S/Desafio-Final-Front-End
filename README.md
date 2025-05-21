@@ -1,8 +1,12 @@
 # SENAI CIMATEC – Unidade Curricular: DESAFIO TRILHA FRONT-END
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+Este projeto foi gerado usando o [Angular CLI](https://github.com/angular/angular-cli) versão 19.2.6.
 
-## Development server
+## Vercel
+
+Link do projeto publicado: https://desafio-final-front-end-eyws.vercel.app/
+
+## Servidor de desenvolvimento
 
 Para iniciar um servidor de desenvolvimento local, execute:
 
@@ -10,10 +14,13 @@ Para iniciar um servidor de desenvolvimento local, execute:
 ng serve
 ```
 ```bash
+npm i
+```
+```bash
 npm i ngx-mask
 ```
 
-📚 Conteúdos Formativos Revisados no Projeto
+📚 Conteúdos Formativos Revisados no Projeto:
 
 - Lógica de Programação
 - HTML, CSS e JavaScript
