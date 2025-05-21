@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   selectedCars: Car[] = [];
   totalValue: number = 0;
-  averageYear: number = 0;
 
   constructor(private dataService: DataService, private router: Router) { }
 

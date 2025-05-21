@@ -10,19 +10,8 @@ import { Router } from '@angular/router';
 export class FooterComponent {
   constructor(private router: Router) {}
   
-  navigateHome(){
-    this.router.navigate(['/home']);
-  }
-
-  navigateVehicles(){
-    this.router.navigate(['/vehicles']);
-  }
-
-  navigateCompareVehicles(){
-    this.router.navigate(['/compare-vehicles']);
-  }
-
-  navigateTestDrive(){
-    this.router.navigate(['/test-drive']);
+ navigationTerms() {
+    this.router.navigate(['/termos-e-condicoes']);
+    window.scrollTo(0, 0);
   }
 }
