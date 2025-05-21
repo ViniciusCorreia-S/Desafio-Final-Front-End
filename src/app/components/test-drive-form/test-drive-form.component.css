@@ -8,6 +8,7 @@
 .container {
   max-width: 800px;
   margin: 30px auto;
+  margin-bottom: 0;
   padding: 20px;
   background-color: white;
   border-radius: 8px;
