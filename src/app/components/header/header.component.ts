@@ -16,18 +16,22 @@ export class HeaderComponent {
   
   navigateHome(){
     this.router.navigate(['/home']);
+    window.scrollTo(0, 0);
   }
 
   navigateVehicles(){
     this.router.navigate(['/vehicles']);
+    window.scrollTo(0, 0);
   }
 
   navigateCompareVehicles(){
     this.router.navigate(['/compare-vehicles']);
+    window.scrollTo(0, 0);
   }
 
   navigateTestDrive(){
     this.router.navigate(['/test-drive']);
+    window.scrollTo(0, 0);
   }
 
   menuBtn: boolean = false;

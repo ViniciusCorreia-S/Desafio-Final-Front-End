@@ -1,30 +1,28 @@
-<body>
-  <div class="catalog-content">
-    <h1>As Marcas que Movem Você</h1>
-    <p>Explore as marcas que definem inovação, desempenho e estilo!</p>
+<div class="catalog-content">
+  <h1>As Marcas que Movem Você</h1>
+  <p>Explore as marcas que definem inovação, desempenho e estilo!</p>
+  
+  <div class="car-brands">
+
+    <div class="brand-item" (click)="navigateVehicles()">
+      <div class="brand-img">
+        <img src="Img/BMW-logo.png" alt="BMW" />
+      </div>
+      <div class="brand-name">BMW</div>
+    </div>
     
-    <div class="car-brands">
+    <div class="brand-item" (click)="navigateVehicles()">
+      <div class="brand-img">
+        <img src="Img/Ford-logo.png" alt="Ford" />
+      </div>
+      <div class="brand-name">Ford</div>
+    </div>
 
-      <div class="brand-item" (click)="navigateVehicles()">
-        <div class="brand-img">
-          <img src="Img/BMW-logo.png" alt="BMW" />
-        </div>
-        <div class="brand-name">BMW</div>
+    <div class="brand-item" (click)="navigateVehicles()">
+      <div class="brand-img">
+        <img src="Img/Mercedes-logo.png" alt="Mercedes" />
       </div>
-      
-      <div class="brand-item" (click)="navigateVehicles()">
-        <div class="brand-img">
-          <img src="Img/Ford-logo.png" alt="Ford" />
-        </div>
-        <div class="brand-name">Ford</div>
-      </div>
-
-      <div class="brand-item" (click)="navigateVehicles()">
-        <div class="brand-img">
-          <img src="Img/Mercedes-logo.png" alt="Mercedes" />
-        </div>
-        <div class="brand-name">Mercedes</div>
-      </div>
+      <div class="brand-name">Mercedes</div>
     </div>
   </div>
-</body>
+</div>

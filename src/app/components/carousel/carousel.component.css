@@ -99,7 +99,7 @@ body {
 
 .carousel-controls {
   position: absolute;
-  bottom: 40px;
+  bottom: 120px;
   right: 8%;
   display: flex;
   align-items: center;
@@ -107,8 +107,8 @@ body {
 }
 
 .carousel-control {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,7 +191,9 @@ body {
     padding: 15px 30px;
     font-size: 1rem;
   }
+}
 
+@media (max-width: 900px) {
   .carousel-control {
     display: none;
   }

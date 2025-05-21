@@ -13,5 +13,6 @@ export class CatalogComponent {
 
   navigateVehicles(){
     this.router.navigate(['/vehicles']);
+    window.scrollTo(0, 0);
   }
 }

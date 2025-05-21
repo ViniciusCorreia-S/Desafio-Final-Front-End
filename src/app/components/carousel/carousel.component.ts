@@ -126,7 +126,7 @@ export class CarouselComponent implements AfterViewInit {
 
   scrollParaBaixo(): void {
     window.scrollBy({
-      top: 1300,
+      top: 700,
       behavior: 'smooth'
     });
   }
