@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { TestDriveFormComponent } from '../../components/test-drive-form/test-drive-form.component';
 import { FooterComponent } from '../../components/footer/footer.component';
-import { ConfirmTestDriveComponent } from '../../components/confirm-test-drive/confirm-test-drive.component';
 import { CommonModule } from '@angular/common';
 
 @Component({

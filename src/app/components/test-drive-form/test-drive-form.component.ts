@@ -71,16 +71,22 @@ export class TestDriveFormComponent implements OnInit {
       this.testDriveForm.get('fordModel')?.updateValueAndValidity();
     });
   }
+
+  dataForm!: any
   
   onSubmit(): void {
     if (this.testDriveForm.valid) {
       console.log('Formulário enviado:', this.testDriveForm.value);
 
-      localStorage.setItem('dadosUsuario' ,JSON.stringify(this.testDriveForm.value));
+      sessionStorage.setItem('dadosUsuario' ,JSON.stringify(this.testDriveForm.value));
       
       this.showSuccess = true;
       
       window.scrollTo(0, 0);
+
+      this.dataForm = this.testDriveForm.value;
+
+      console.log('Nome:', this.dataForm.name);
       
       this.testDriveForm.reset();
       this.selectedBrand = '';
@@ -90,6 +96,12 @@ export class TestDriveFormComponent implements OnInit {
         control?.markAsTouched();
       });
     }
+  }
+
+  numeroAleatorio = Math.random();
+
+  gerarNumeroAleatorio(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   
   getSelectedModelValue(): string {
@@ -108,11 +120,11 @@ export class TestDriveFormComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
-  navigationConfirm() {
+  HomeRouter() {
+    this.router.navigate(['/home']);
+  }
 
-    if (this.testDriveForm.valid) {
-      this.router.navigate(['/confirmacao-test-drive']);
-      window.scrollTo(0, 0);
-    }
+  backtestDrive() {
+    this.showSuccess = false;
   }
 }
