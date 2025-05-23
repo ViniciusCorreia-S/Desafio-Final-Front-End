@@ -71,7 +71,7 @@ export class TestDriveFormComponent implements OnInit {
       this.testDriveForm.get('fordModel')?.updateValueAndValidity();
     });
   }
-
+  codigo: number = 0;
   dataForm!: any
   
   onSubmit(): void {
@@ -90,6 +90,8 @@ export class TestDriveFormComponent implements OnInit {
       
       this.testDriveForm.reset();
       this.selectedBrand = '';
+
+      this.codigo = this.gerarNumeroAleatorio(1,1000);
     } else {
       Object.keys(this.testDriveForm.controls).forEach(key => {
         const control = this.testDriveForm.get(key);
