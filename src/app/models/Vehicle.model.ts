@@ -1,8 +1,8 @@
-export interface dataCars extends Array<dataCars> {}
+export type CarBrand = 'BMW' | 'Ford' | 'Mercedes-Benz';
 
 export interface Car {
   id: number;
-  brand: string;
+  brand: CarBrand;
   model: string;
   year: number;
   price: number;
@@ -15,8 +15,4 @@ export interface Car {
   imageUrl: string;
   description: string;
   selected?: boolean;
-}
-
-export interface VeiculosAPI {
-  dataCars: Car;
 }

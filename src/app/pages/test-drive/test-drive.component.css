@@ -1,4 +1,4 @@
 main {
-    background-color: #6B7280;
+    background: linear-gradient(#0EA5E9 0%, #6B7280 60%, #6B7280 100%);
     padding-top: 5px;
 }

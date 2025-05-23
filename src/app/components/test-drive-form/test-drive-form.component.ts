@@ -107,4 +107,12 @@ export class TestDriveFormComponent implements OnInit {
     this.router.navigate(['/termos-e-condicoes']);
     window.scrollTo(0, 0);
   }
+
+  navigationConfirm() {
+
+    if (this.testDriveForm.valid) {
+      this.router.navigate(['/confirmacao-test-drive']);
+      window.scrollTo(0, 0);
+    }
+  }
 }

@@ -1,0 +1,78 @@
+<header>
+    <app-header></app-header>
+</header>
+
+<body>
+
+<div class="confirmation-container">
+        <div class="success-icon"></div>
+        
+        <h1 class="confirmation-title">Test Drive Agendado!</h1>
+        <p class="confirmation-subtitle">
+            Sua solicitação foi recebida com sucesso. Nossa equipe entrará em contato em breve para confirmar todos os detalhes da sua experiência.
+        </p>
+
+        <div class="protocol-number">
+            Protocolo: #TD2024-<span id="protocolNumber"></span>
+        </div>
+
+        <div class="confirmation-details">
+            <div class="detail-item">
+                <span class="detail-label">Nome:</span>
+                <span class="detail-value" id="customerName">João Silva</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">E-mail:</span>
+                <span class="detail-value" id="customerEmail">{{dataForm.email}}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Telefone:</span>
+                <span class="detail-value" id="customerPhone">(11) 99999-9999</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Marca de Interesse:</span>
+                <span class="detail-value" id="selectedBrand">BMW</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Modelo:</span>
+                <span class="detail-value" id="selectedModel">X5</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Data Preferencial:</span>
+                <span class="detail-value" id="preferredDate">25/05/2024</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Horário:</span>
+                <span class="detail-value" id="preferredTime">Manhã (09:00 - 12:00)</span>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>Próximos Passos:</h3>
+            <ol class="steps-list">
+                <li>Nossa equipe analisará sua solicitação em até 2 horas úteis</li>
+                <li>Entraremos em contato via telefone para confirmar disponibilidade</li>
+                <li>Enviaremos um e-mail com todos os detalhes do agendamento</li>
+                <li>No dia do test drive, lembre-se de trazer sua CNH válida</li>
+            </ol>
+        </div>
+
+        <div class="contact-info">
+            <h4>Precisa de ajuda?</h4>
+            <p><strong>Telefone:</strong> (71) 9 8483-8928</p>
+            <p><strong>WhatsApp:</strong> (71) 9 8483-8928</p>
+            <p><strong>E-mail:</strong> specdrive&commat;concessionaria.com</p>
+        </div>
+
+        <div class="action-buttons">
+            <a (click)="HomeRouter()" class="btn btn-primary">
+                Voltar ao Início
+            </a>
+            <a (click)="testDriveRouter()" class="btn btn-secondary" onclick="scheduleAnother()">
+                Agendar Outro Test Drive
+            </a>
+        </div>
+    </div>
+</body>
+
+<app-footer></app-footer>

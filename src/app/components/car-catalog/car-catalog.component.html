@@ -1,34 +1,39 @@
 <div class="catalog-container">
   <h2>Catálogo de Veículos</h2>
   <p>Selecione os veículos para ver detalhes no dashboard</p>
-  
-  <div class="actions">
-    <button (click)="selectAllCars()" class="btn select-btn">Selecionar Todos</button>
-    <button (click)="deselectAllCars()" class="btn deselect-btn">Deselecionar Todos</button>
-    <!-- <button (click)="sendSelectedToDashboard()" class="btn dashboard-btn" [disabled]="getSelectedCount() === 0"> -->
-      <!-- Ver Selecionados ({{getSelectedCount()}}) -->
-    <!-- </button> -->
+
+  <app-car-filter></app-car-filter>
+
+  <div class="results-info">
+    <span>Mostrando {{ filteredCars().length }} de {{ cars.length }} carros</span>
+    @if (carFilter.getSelectedCount() > 0) {
+      <span class="filter-info">
+        (Filtrado por: {{ getSelectedBrandsText() }})
+      </span>
+    }
   </div>
 
   <div class="cars-grid">
-    <div class="car-card" *ngFor="let car of cars">
-      <div class="car-header">
-        <label class="checkbox-container">
-          <input type="checkbox" [checked]="car.selected" (change)="toggleSelection(car.id)">
-        </label>
-        <h3>{{car.brand}} {{car.model}}</h3>
+    @for (car of filteredCars(); track car.id) {
+    <div class="car-card" ngFor="let car of cars">
+        <div class="car-header">
+          <label class="checkbox-container">
+            <input type="checkbox" [checked]="car.selected" (change)="toggleSelection(car.id)">
+          </label>
+          <h3>{{car.brand}} {{car.model}}</h3>
+        </div>
+
+        <div class="car-image">
+          <img [src]="car.imageUrl" [alt]="car.brand + ' ' + car.model">
+        </div>
+
+        <div class="car-details">
+          <p><strong>Ano:</strong> {{car.year}}</p>
+          <p><strong>Preço:</strong> R$ {{car.price | number:'1.2'}}</p>
+          <p>{{car.description}}</p>
+        </div>
       </div>
-      
-      <div class="car-image">
-        <img [src]="car.imageUrl" [alt]="car.brand + ' ' + car.model">
-      </div>
-      
-      <div class="car-details">
-        <p><strong>Ano:</strong> {{car.year}}</p>
-        <p><strong>Preço:</strong> R$ {{car.price | number:'1.2'}}</p>
-        <p>{{car.description}}</p>
-      </div>
-    </div>
+    } 
   </div>
   
   <div class="dashboard-router">
