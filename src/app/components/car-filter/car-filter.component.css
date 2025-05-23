@@ -1,9 +1,14 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 .car-filter {
     padding: 16px;
     border: 1px solid #ddd;
     border-radius: 8px;
     margin-bottom: 16px;
     background-color: white;
+    font-family: 'Poppins', sans-serif;
 }
 
 .filter-options {

@@ -50,7 +50,7 @@
       <div class="next-steps">
           <h3>Próximos Passos:</h3>
           <ol class="steps-list">
-              <li>Nossa equipe analisará sua solicitação em até 2 horas úteis</li>
+              <li>Nossa equipe analisará sua solicitação em até 24 horas</li>
               <li>Entraremos em contato via telefone para confirmar disponibilidade</li>
               <li>Enviaremos um e-mail com todos os detalhes do agendamento</li>
               <li>No dia do test drive, lembre-se de trazer sua CNH válida</li>
@@ -172,7 +172,7 @@
       <label for="preferredTime">Horário Preferencial*</label>
       <select id="preferredTime" formControlName="preferredTime">
         <option value="">Selecione um horário</option>
-        <option value="manha">Manhã (09:00 - 12:00)</option>
+        <option value="manhã">Manhã (09:00 - 12:00)</option>
         <option value="tarde">Tarde (13:00 - 18:00)</option>
       </select>
       <div class="error-message" *ngIf="testDriveForm.get('preferredTime')?.invalid && testDriveForm.get('preferredTime')?.touched">
