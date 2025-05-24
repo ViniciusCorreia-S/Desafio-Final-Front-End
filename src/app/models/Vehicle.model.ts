@@ -12,7 +12,16 @@ export interface Car {
   motorizationL: number;
   acceleration: number;
   vmax: number;
+  featured: boolean;
+  mostSold: boolean;
+  recent: boolean;
+  salesMonth?: number;
   imageUrl: string;
-  description: string;
   selected?: boolean;
 }
+
+export type CarroFilter = {
+  tipo?: 'destaque' | 'mais-vendidos' | 'recem-chegados';
+  marca?: string;
+  precoMax?: number;
+};

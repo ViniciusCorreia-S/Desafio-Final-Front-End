@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Car } from '../models/Vehicle.model';
+import { CarroFilter } from '../models/Vehicle.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,11 @@ export class DataService {
       motorizationL: 4.4,
       acceleration: 3.8,
       vmax: 290,
+      featured: true,
+      mostSold: true,
+      recent: true,
+      salesMonth: 100,
       imageUrl: 'Img/BMW X6 M Competition-Photoroom.png',
-      description: '',
       selected: false
     },
     {
@@ -36,8 +40,11 @@ export class DataService {
       motorizationL: 3.0,
       acceleration: 3.4,
       vmax: 302,
+      featured: true,
+      mostSold: true,
+      recent: true,
+      salesMonth: 100,
       imageUrl: 'Img/BMW M4 CS.png',
-      description: '',
       selected: false
     },
     {
@@ -52,8 +59,11 @@ export class DataService {
       motorizationL: 5.0,
       acceleration: 4.3,
       vmax: 250,
+      featured: true,
+      mostSold: true,
+      recent: true,
+      salesMonth: 100,
       imageUrl: 'Img/Mustang GT.png',
-      description: '',
       selected: false
     },
     {
@@ -68,8 +78,11 @@ export class DataService {
       motorizationL: 3.0,
       acceleration: 9.2,
       vmax: 187,
+      featured: true,
+      mostSold: true,
+      recent: true,
+      salesMonth: 100,
       imageUrl: 'Img/Ford Ranger XLS V6.png',
-      description: '',
       selected: false
     },
     {
@@ -84,8 +97,11 @@ export class DataService {
       motorizationL: 66.5,
       acceleration: 8.6,
       vmax: 160,
+      featured: true,
+      mostSold: true,
+      recent: true,
+      salesMonth: 100,
       imageUrl: 'Img/Mercedes EQA SUV.png',
-      description: '',
       selected: false
     },
     {
@@ -100,8 +116,11 @@ export class DataService {
       motorizationL: 2.0,
       acceleration: 4.9,
       vmax: 250,
+      featured: true,
+      mostSold: true,
+      recent: true,
+      salesMonth: 100,
       imageUrl: 'Img/Mercedes-AMG CLA Coupé.png',
-      description: '',
       selected: false
     }
   ];
@@ -154,6 +173,34 @@ export class DataService {
     
     this.cars.next(updatedCars);
     this.selectedCars.next([]);
+  }
+
+  
+  carros = this.carsData.asReadonly();
+
+  getFilteredCarros(filter: CarroFilter) {
+    return this.carros().filter((carro: any) => {
+      let match = true;
+      
+      if (filter.tipo === 'destaque' && !carro.destaque) match = false;
+      if (filter.tipo === 'mais-vendidos' && !carro.maisVendido) match = false;
+      if (filter.tipo === 'recem-chegados' && !carro.recente) match = false;
+      if (filter.marca && !carro.marca.includes(filter.marca)) match = false;
+      if (filter.precoMax && carro.preco > filter.precoMax) match = false;
+      
+      return match;
+    });
+  }
+
+  addCarro(novoCarro: Omit<Car, 'id'>) {
+    this.carsData.update((carros: any) => [
+      ...carros,
+      { ...novoCarro, id: this.generateId() }
+    ]);
+  }
+
+  private generateId(): number {
+    return Math.max(...this.carros().map((c: any) => c.id), 0) + 1;
   }
 }
 
