@@ -1,10 +1,9 @@
 import { Component , Input } from '@angular/core';
 import { Car } from '../../models/Vehicle.model';
-import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-car-card',
-  imports: [ CurrencyPipe ],
+  imports: [],
   templateUrl: './car-card.component.html',
   styleUrl: './car-card.component.css'
 })

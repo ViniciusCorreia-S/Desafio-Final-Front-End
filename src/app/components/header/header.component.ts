@@ -34,6 +34,11 @@ export class HeaderComponent {
     window.scrollTo(0, 0);
   }
 
+  navigateDestaques(){
+    this.router.navigate(['/destaques']);
+    window.scrollTo(0, 0);
+  }
+
   menuBtn: boolean = false;
 
   toggleMenu() {

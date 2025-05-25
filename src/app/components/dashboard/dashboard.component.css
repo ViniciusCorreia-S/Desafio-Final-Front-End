@@ -1,5 +1,5 @@
  
-.dashboard-container {
+/* .dashboard-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
@@ -321,4 +321,199 @@ hr {
 .back-router button:focus {
   outline: 3px solid rgba(102, 126, 234, 0.5);
   outline-offset: 2px;
+} */
+
+/* dashboard-comparacao.component.css */
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dashboard-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* Estilo para mensagem quando não há carros selecionados */
+.no-cars-message {
+  text-align: center;
+  margin: 40px 0;
+  color: #7f8c8d;
+  font-size: 18px;
+}
+
+.x {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  color: #e74c3c;
+}
+
+/* Container principal do dashboard */
+.dashboard-content {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+/* Cartões de estatísticas */
+.stats-cards {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Tabela de comparação */
+.selected-cars-list {
+  overflow-x: auto;
+}
+
+.selected-cars-list h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  table-layout: fixed;
+}
+
+/* Layout responsivo para os carros lado a lado */
+tbody {
+  display: inline-block;
+  min-width: 250px;
+  vertical-align: top;
+  margin: 0 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+tr {
+  display: block;
+  padding: 10px 15px;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+th {
+  text-align: left;
+  color: #7f8c8d;
+  font-weight: normal;
+  padding: 8px 0;
+  width: 150px;
+}
+
+td {
+  padding: 8px 0;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.car-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 10px 0;
+}
+
+/* Botão de voltar */
+.back-router {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.back-router button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-router button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 10px;
+  }
+  
+  tbody {
+    display: block;
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+  
+  .stats-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+/* Efeitos de hover para melhor interação */
+tbody:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Destaque para valores importantes */
+td:contains("R$"), 
+td:contains("CV"), 
+td:contains("Nm"), 
+td:contains("km/h") {
+  font-weight: bold;
+  color: #27ae60;
 }

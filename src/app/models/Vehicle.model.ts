@@ -14,14 +14,14 @@ export interface Car {
   vmax: number;
   featured: boolean;
   mostSold: boolean;
-  recent: boolean;
+  recent?: boolean;
   salesMonth?: number;
   imageUrl: string;
   selected?: boolean;
 }
 
 export type CarroFilter = {
-  tipo?: 'destaque' | 'mais-vendidos' | 'recem-chegados';
-  marca?: string;
-  precoMax?: number;
+  type?: 'destaque' | 'mais-vendidos' | 'recem-chegados';
+  brand?: string;
+  maxPrice?: number;
 };

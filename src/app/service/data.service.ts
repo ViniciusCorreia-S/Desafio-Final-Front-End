@@ -21,9 +21,9 @@ export class DataService {
       motorizationL: 4.4,
       acceleration: 3.8,
       vmax: 290,
-      featured: true,
-      mostSold: true,
-      recent: true,
+      featured: false,
+      mostSold: false,
+      recent: false,
       salesMonth: 100,
       imageUrl: 'Img/BMW X6 M Competition-Photoroom.png',
       selected: false
@@ -42,7 +42,7 @@ export class DataService {
       vmax: 302,
       featured: true,
       mostSold: true,
-      recent: true,
+      recent: false,
       salesMonth: 100,
       imageUrl: 'Img/BMW M4 CS.png',
       selected: false
@@ -61,7 +61,7 @@ export class DataService {
       vmax: 250,
       featured: true,
       mostSold: true,
-      recent: true,
+      recent: false,
       salesMonth: 100,
       imageUrl: 'Img/Mustang GT.png',
       selected: false
@@ -78,8 +78,8 @@ export class DataService {
       motorizationL: 3.0,
       acceleration: 9.2,
       vmax: 187,
-      featured: true,
-      mostSold: true,
+      featured: false,
+      mostSold: false,
       recent: true,
       salesMonth: 100,
       imageUrl: 'Img/Ford Ranger XLS V6.png',
@@ -97,9 +97,9 @@ export class DataService {
       motorizationL: 66.5,
       acceleration: 8.6,
       vmax: 160,
-      featured: true,
+      featured: false,
       mostSold: true,
-      recent: true,
+      recent: false,
       salesMonth: 100,
       imageUrl: 'Img/Mercedes EQA SUV.png',
       selected: false
@@ -116,9 +116,9 @@ export class DataService {
       motorizationL: 2.0,
       acceleration: 4.9,
       vmax: 250,
-      featured: true,
-      mostSold: true,
-      recent: true,
+      featured: false,
+      mostSold: false,
+      recent: false,
       salesMonth: 100,
       imageUrl: 'Img/Mercedes-AMG CLA Coupé.png',
       selected: false
@@ -176,31 +176,29 @@ export class DataService {
   }
 
   
-  carros = this.carsData.asReadonly();
+  carros = [...this.carsData];
 
   getFilteredCarros(filter: CarroFilter) {
-    return this.carros().filter((carro: any) => {
+    return this.carros.filter((carro: any) => {
       let match = true;
       
-      if (filter.tipo === 'destaque' && !carro.destaque) match = false;
-      if (filter.tipo === 'mais-vendidos' && !carro.maisVendido) match = false;
-      if (filter.tipo === 'recem-chegados' && !carro.recente) match = false;
-      if (filter.marca && !carro.marca.includes(filter.marca)) match = false;
-      if (filter.precoMax && carro.preco > filter.precoMax) match = false;
+      if (filter.type === 'destaque' && !carro.featured) match = false;
+      if (filter.type === 'mais-vendidos' && !carro.mostSold) match = false;
+      if (filter.type === 'recem-chegados' && !carro.recent) match = false;
+      if (filter.brand && !carro.brand.includes(filter.brand)) match = false;
+      if (filter.maxPrice && carro.preco > filter.maxPrice) match = false;
       
       return match;
     });
   }
 
-  addCarro(novoCarro: Omit<Car, 'id'>) {
-    this.carsData.update((carros: any) => [
-      ...carros,
-      { ...novoCarro, id: this.generateId() }
-    ]);
-  }
+//   addCarro(novoCarro: Omit<Car, 'id'>) {
+//   const newCar = { ...novoCarro, id: this.generateId() };
+//   this.cars.next([...this.cars.value, newCar]);
+// }
 
-  private generateId(): number {
-    return Math.max(...this.carros().map((c: any) => c.id), 0) + 1;
-  }
+//   private generateId(): number {
+//   return Math.max(...this.cars.value.map(c => c.id), 0) + 1;
+// }
 }
 

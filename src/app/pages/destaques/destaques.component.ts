@@ -3,15 +3,17 @@ import { Observable } from 'rxjs';
 import { Car, CarroFilter } from '../../models/Vehicle.model';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../service/data.service';
-import { CurrencyPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { GraphicsComponent } from '../../components/graphics/graphics.component';
 import { CarCardComponent } from '../../components/car-card/car-card.component';
 import { ReactiveFormsModule , FormControl , NgModel } from '@angular/forms';
+import { HeaderComponent } from "../../components/header/header.component";
+import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-destaques',
-  imports: [CommonModule, GraphicsComponent],
+  imports: [CommonModule, GraphicsComponent, CarCardComponent, ReactiveFormsModule, FormsModule, HeaderComponent, FooterComponent],
+  standalone: true,
   templateUrl: './destaques.component.html',
   styleUrl: './destaques.component.css'
 })
@@ -35,7 +37,7 @@ export class DestaquesComponent {
   private carrosService = inject( DataService );
 
   // Filtros com two-way binding
-  filtro: CarroFilter = { tipo: 'destaque' };
+  filtro: CarroFilter = { type: 'destaque' };
 
   // Carros filtrados computados
   get carrosFiltrados() {
@@ -44,12 +46,7 @@ export class DestaquesComponent {
 
   // Contadores para estatísticas
   get totalCarros() {
-    return this.carrosService.carros().length;
-  }
-
-  get precoMedio() {
-    const carros = this.carrosService.carros();
-    return carros.reduce((sum: any, carro: any) => sum + carro.preco, 0) / carros.length;
+    return this.carrosService.carros.length;
   }
 
   // Método para formatação condicional
