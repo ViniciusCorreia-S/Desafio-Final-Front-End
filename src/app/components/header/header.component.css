@@ -1,24 +1,11 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: #f5f5f5;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 header {
-    background: linear-gradient(135deg, #2a2a72 0%, #009ffd 100%);
-    color: black;
-    padding: 1.5rem;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    font-family: "Montsettat";
+    background-color: #404040;
 }
 
 .header-container {
@@ -212,4 +199,201 @@ nav button:hover::after {
     #menu {
         display: none;
     }
+} */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(44, 53, 49, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(209, 232, 226, 0.2);
+    transition: all 0.3s ease;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(209, 232, 226, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+header:hover::before {
+    opacity: 1;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-animation .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(209, 232, 226, 0.1), transparent);
+    animation: float 6s ease-in-out infinite;
+}
+
+.background-animation .circle:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.background-animation .circle:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.background-animation .circle:nth-child(3) {
+    width: 100px;
+    height: 100px;
+    right: 20%;
+    animation-delay: 4s;
+}
+
+.background-animation .circle:nth-child(4) {
+    width: 60px;
+    height: 60px;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo img {
+    height: 40px;
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(209, 232, 226, 0.3));
+}
+
+.logo-dot {
+    width: 8px;
+    height: 8px;
+    background: #D1E8E2;
+    border-radius: 50%;
+    margin-left: 8px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+.mobile-menu-btn {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav button {
+    background: transparent;
+    border: 2px solid transparent;
+    color: #D1E8E2;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+nav button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(209, 232, 226, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+nav button:hover::before {
+    left: 100%;
+}
+
+nav button:hover {
+    border-color: #116466;
+    color: #116466;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(17, 100, 102, 0.3);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    nav {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 1rem;
+    }
+}
+
+/* Animações adicionais */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
 }

@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -146,4 +146,146 @@ p {
         width: 150px;   
         padding: 20px;
     }
+} */
+
+.catalog-content {
+    padding: 5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(135deg, #116466, #2F4454);
+}
+
+.catalog-content h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #D1E8E2;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 30px rgba(209, 232, 226, 0.5);
+}
+
+.catalog-content p {
+    font-size: 1.3rem;
+    color: rgba(209, 232, 226, 0.8);
+    margin-bottom: 4rem;
+    letter-spacing: 1px;
+}
+
+.car-brands {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.brand-item {
+    background: linear-gradient(145deg, #2F4454, #116466);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.brand-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(209, 232, 226, 0.1));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.brand-item:hover::before {
+    opacity: 1;
+}
+
+.brand-item:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 30px 60px rgba(209, 232, 226, 0.2);
+}
+
+.brand-img {
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.brand-img img {
+    width: 120px;
+    height: auto;
+    filter: brightness(1.2) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.brand-item:hover .brand-img img {
+    transform: scale(1.1);
+    filter: brightness(1.4) drop-shadow(0 15px 30px rgba(209, 232, 226, 0.3));
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #D1E8E2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {    
+    .catalog-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .car-brands {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {    
+    .catalog-content {
+        padding: 3rem 1rem;
+    }
+    
+    .catalog-content h1 {
+        font-size: 2rem;
+    }
+    
+    .brand-item {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Animações adicionais */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.brand-item {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.brand-item:nth-child(1) { animation-delay: 0.1s; }
+.brand-item:nth-child(2) { animation-delay: 0.2s; }
+.brand-item:nth-child(3) { animation-delay: 0.3s; }
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
 }

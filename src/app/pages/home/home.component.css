@@ -1,3 +1,19 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #2C3531 0%, #116466 100%);
+    color: #D1E8E2;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
 main {
-    background-color: #ffffff;
+    margin-top: 80px;
+    min-height: 100vh;
 }

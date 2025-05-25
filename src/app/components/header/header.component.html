@@ -1,25 +1,27 @@
-<div class="background-animation">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-</div>
-<div class="header-container">
-    <div class="logo">
-        <img src="/Img/logo-specDrive.png" alt="logo" (click)="navigateHome()"><span class="logo-dot"></span>
+<header>
+    <div class="background-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
     </div>
+    <div class="header-container">
+        <div class="logo">
+            <img src="/Img/logo-specDrive.png" alt="logo" (click)="navigateHome()"><span class="logo-dot"></span>
+        </div>
 
-    <div class="mobile-menu-btn">
-        <app-side-bar></app-side-bar>
+        <div class="mobile-menu-btn">
+            <app-side-bar></app-side-bar>
+        </div>
+
+        <nav id="menu">
+            <ul>
+                <button (click)="navigateHome()">HOME</button>
+                <button (click)="navigateVehicles()">VEÍCULOS</button>
+                <button (click)="navigateCompareVehicles()">COMPARE</button>
+                <button (click)="navigateTestDrive()">TEST DRIVE</button>
+                <button (click)="navigateDestaques()">DESTAQUES</button>
+            </ul>
+        </nav>
     </div>
-
-    <nav id="menu">
-        <ul>
-            <button (click)="navigateHome()">HOME</button>
-            <button (click)="navigateVehicles()">VEÍCULOS</button>
-            <button (click)="navigateCompareVehicles()">COMPARE</button>
-            <button (click)="navigateTestDrive()">TEST DRIVE</button>
-            <button (click)="navigateDestaques()">DESTAQUES</button>
-        </ul>
-    </nav>
-</div>
+</header>
