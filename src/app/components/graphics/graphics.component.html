@@ -1,7 +1,93 @@
-<div class="chart-container">
-  <canvas baseChart
-    [data]="barChartData"
-    [options]="barChartOptions"
-    type="bar">
-  </canvas>
+<!-- <div class="chart-container">
+  <canvas
+  baseChart
+  [data]="chartData()"
+  [options]="chartOptions"
+  type="bar">
+</canvas>
+</div> -->
+
+<div class="dashboard-container">
+  <h1>Dashboard de Carros</h1>
+  
+  <div class="charts-grid">
+    <div class="chart-card">
+      <h2>Carros em Destaque</h2>
+      <div class="chart-container">
+        <canvas id="featuredChart"></canvas>
+      </div>
+    </div>
+    
+    <div class="chart-card">
+      <h2>Carros Mais Vendidos</h2>
+      <div class="chart-container">
+        <canvas id="topSellingChart"></canvas>
+      </div>
+    </div>
+    
+    <div class="chart-card">
+      <h2>Carros Recém-Chegados</h2>
+      <div class="chart-container">
+        <canvas id="newArrivalsChart"></canvas>
+      </div>
+    </div>
+  </div>
+  
+  <div class="data-tables">
+    <div class="data-table">
+      <h3>Detalhes dos Carros em Destaque</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Preço (R$)</th>
+            <th>Estoque</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of featuredCars">
+            <td>{{ car.model }}</td>
+            <td>{{ car.price | currency:'BRL':'symbol':'1.2-2' }}</td>
+            <td>{{ car.stock }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="data-table">
+      <h3>Detalhes dos Mais Vendidos</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Vendas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of topSellingCars">
+            <td>{{ car.model }}</td>
+            <td>{{ car.sales }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="data-table">
+      <h3>Detalhes dos Recém-Chegados</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Data de Chegada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of newArrivalCars">
+            <td>{{ car.model }}</td>
+            <td>{{ car.arrivalDate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
