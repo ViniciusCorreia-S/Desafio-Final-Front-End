@@ -1,4 +1,4 @@
-/* .catalog-container {
+.catalog-container {
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 20px;
@@ -202,9 +202,23 @@ p {
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
   background: #214D72;
   color: #fff;
-} */
+}
 
-.catalog-container {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .catalog-container {
     padding: 5rem 2rem 3rem;
     max-width: 1400px;
     margin: 0 auto;
@@ -597,7 +611,6 @@ p {
     }
 }
 
-/* Loading states and micro-interactions */
 .car-card {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }

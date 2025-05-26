@@ -14,7 +14,6 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Badge */
 .badge {
   position: absolute;
   top: 12px;
@@ -38,7 +37,6 @@
   color: white;
 }
 
-/* Imagem */
 .card-carro img {
   width: 90%;
   object-fit: cover;
@@ -49,7 +47,6 @@
   transform: scale(1.05);
 }
 
-/* Informações do carro */
 .carro-info {
   padding: 20px;
 }
@@ -76,7 +73,6 @@
   margin: 16px 0 20px 0 !important;
 }
 
-/* Ações do carro */
 .carro-actions {
   display: flex;
   gap: 8px;
@@ -117,7 +113,6 @@
   box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .card-carro {
     max-width: 100%;
@@ -133,7 +128,6 @@
   }
 }
 
-/* Animação de entrada */
 @keyframes fadeInUp {
   from {
     opacity: 0;

@@ -7,13 +7,12 @@
 
 body {
     font-family: 'Arial', 'Helvetica Neue', sans-serif;
-    background: linear-gradient(135deg, #2C3531 0%, #116466 100%);
-    color: #D1E8E2;
+    background: linear-gradient(135deg, #6B7280 0%, #111827 100%);
+    color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
 main {
-    margin-top: 80px;
     min-height: 100vh;
 }
