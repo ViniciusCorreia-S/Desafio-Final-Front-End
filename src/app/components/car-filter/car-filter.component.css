@@ -4,10 +4,10 @@
 
 .car-filter {
     padding: 16px;
-    border: 1px solid #214D72;
+    /* border: 1px solid #ffffff; */
     border-radius: 8px;
     margin-bottom: 16px;
-    background-color: transparent;
+    background-color: #214D72;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -24,15 +24,19 @@
     gap: 8px;
     cursor: pointer;
     padding: 8px 12px;
-    border: 1px solid #214D72;
+    border: 1px solid #CBCBCB;
     border-radius: 4px;
     background-color: #ffffff;
     color: #214D72;
     transition: background-color 0.3s;
 }
 
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
 .checkbox-label:hover {
-    background-color: #ffffff;
+    background-color: #CBCBCB;
     border: solid 1px #214D72;
     color: #214D72;
 }
@@ -43,7 +47,7 @@
     align-items: center;
     margin-top: 16px;
     padding-top: 12px;
-    border-top: 1px solid #214D72;
+    border-top: 1px solid #ffffff;
 }
 
 .clear-btn {
@@ -63,8 +67,8 @@
 .clear-btn:disabled {
     background-color: transparent;
     cursor: not-allowed;
-    color: #214D72;
-    border: solid 1px #214D72;
+    color: #ffffff;
+    border: solid 1px #ffffff;
 }
 
 .selected-count {

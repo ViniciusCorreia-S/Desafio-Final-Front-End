@@ -216,7 +216,7 @@ body {
     z-index: 1;
 }
 */
-.slide-overlay::after {
+/* .slide-overlay::after {
     content: '';
     position: absolute;
     top: 0;
@@ -228,7 +228,7 @@ body {
         #46a4a62c 50%, 
         #9ae3e654 100%);
     z-index: 2;
-}
+} */
 /*
 .slide-overlay iframe {
     width: 100%;

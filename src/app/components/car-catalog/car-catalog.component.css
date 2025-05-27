@@ -3,7 +3,6 @@
   margin: 0 auto;
   margin-top: 20px;
   padding: 20px;
-  background-color: #7d9ab1;
   border-radius: 15px;
 }
 
@@ -25,7 +24,6 @@ p {
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 30px;
-  border: 1px solid #214D72;
 }
 
 .filter-section h3 {
@@ -45,7 +43,6 @@ p {
   cursor: pointer;
   padding: 8px 12px;
   background: #ffffff;
-  border: 1px solid #214D72;
   border-radius: 20px;
   transition: all 0.2s ease;
 }
@@ -90,7 +87,6 @@ p {
 }
 
 .car-card {
-  border: 1px solid #214D72;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -99,7 +95,7 @@ p {
 
 .car-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 30px #ffffff43;
 }
 
 .car-header {
@@ -159,7 +155,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #98633F;
 }
 
 .car-image img {
@@ -183,7 +178,7 @@ p {
 }
 
 .dashboard-router button {
-  background-color:  #CBCBCB;
+  background-color:  #ffffff;
   color: #214D72;
   border: solid 2px #214D72;
   padding: 1rem 2.5rem;
@@ -197,7 +192,7 @@ p {
   letter-spacing: 1px;
 }
 
-.dashboard-router:hover button {
+.dashboard-router button:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
   background: #214D72;
@@ -266,7 +261,6 @@ p {
     animation: slideInUp 0.8s ease-out 0.2s both;
 }
 
-/* Results Info */
 .results-info {
     display: flex;
     justify-content: space-between;
@@ -293,7 +287,6 @@ p {
     font-size: 0.9rem !important;
 }
 
-/* Cars Grid */
 .cars-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -302,7 +295,6 @@ p {
     animation: fadeInUp 0.8s ease-out 0.6s both;
 }
 
-/* Car Card */
 .car-card {
     background: linear-gradient(145deg, #2F4454, #116466);
     border-radius: 20px;
@@ -336,7 +328,6 @@ p {
     border-color: rgba(209, 232, 226, 0.3);
 }
 
-/* Car Header */
 .car-header {
     display: flex;
     align-items: center;
@@ -354,7 +345,6 @@ p {
     text-transform: uppercase;
 }
 
-/* Checkbox Container */
 .checkbox-container {
     position: relative;
     cursor: pointer;
@@ -408,7 +398,6 @@ p {
     z-index: 3;
 }
 
-/* Car Image */
 .car-image {
     margin-bottom: 1.5rem;
     position: relative;
@@ -435,7 +424,6 @@ p {
     filter: brightness(1.2) contrast(1.2) drop-shadow(0 10px 20px rgba(209, 232, 226, 0.2));
 }
 
-/* Car Details */
 .car-details {
     position: relative;
     z-index: 2;
@@ -455,7 +443,6 @@ p {
     margin-right: 0.5rem;
 }
 
-/* Dashboard Router Button */
 .dashboard-router {
     text-align: center;
     margin-top: 4rem;
@@ -508,8 +495,7 @@ p {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(209, 232, 226, 0.3);
 }
-
-/* Animations */
+*/
 @keyframes slideInUp {
     from {
         opacity: 0;
@@ -532,7 +518,6 @@ p {
     }
 }
 
-/* Staggered animation for car cards */
 .car-card:nth-child(1) { animation: fadeInUp 0.6s ease-out 0.8s both; }
 .car-card:nth-child(2) { animation: fadeInUp 0.6s ease-out 0.9s both; }
 .car-card:nth-child(3) { animation: fadeInUp 0.6s ease-out 1.0s both; }
@@ -540,7 +525,6 @@ p {
 .car-card:nth-child(5) { animation: fadeInUp 0.6s ease-out 1.2s both; }
 .car-card:nth-child(6) { animation: fadeInUp 0.6s ease-out 1.3s both; }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
     .cars-grid {
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -611,15 +595,15 @@ p {
     }
 }
 
-.car-card {
+/* .car-card {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .car-image {
     position: relative;
-}
+} */
 
-.car-image::before {
+/* .car-image::before {
     content: '';
     position: absolute;
     top: 0;
@@ -633,8 +617,8 @@ p {
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 15px;
-}
+} */
 
-.car-card:hover .car-image::before {
+/* .car-card:hover .car-image::before {
     opacity: 1;
-}
+} */

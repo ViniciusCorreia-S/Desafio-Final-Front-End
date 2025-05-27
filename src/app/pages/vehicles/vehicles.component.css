@@ -1,8 +1,8 @@
 body {
-    background-color: #404040;
+    background: linear-gradient(135deg, #6B7280 0%, #111827 100%);
 }
 
-main , header {
-    background-color: #404040;
+main {
+    background: linear-gradient(135deg, #6B7280 0%, #111827 100%);
     color: #ffffff;
 }
