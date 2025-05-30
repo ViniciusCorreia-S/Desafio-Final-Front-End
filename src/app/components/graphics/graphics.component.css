@@ -2,11 +2,12 @@
   padding: 20px;
   max-width: 1400px;
   margin: 0 auto;
+  font-family: 'poppins', sans-serif;
 }
 
 .dashboard-container h1 {
   text-align: center;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 30px;
 }
 

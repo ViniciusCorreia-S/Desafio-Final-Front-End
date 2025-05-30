@@ -62,24 +62,18 @@ export class GraphicsComponent implements OnInit {
   loadData(): void {
     // Dados simulados - substitua por chamadas à API real
     this.featuredCars = [
-      { model: 'Toyota Corolla', price: 120000, stock: 8 },
-      { model: 'Honda Civic', price: 135000, stock: 5 },
-      { model: 'Volkswagen Golf', price: 110000, stock: 7 }
+      { model: 'BMW M4 CS', price: 1399950, stock: 8 },
+      { model: 'Ford Mustang GT', price: 549000, stock: 5 },
     ];
 
     this.topSellingCars = [
-      { model: 'Fiat Argo', sales: 42 },
-      { model: 'Chevrolet Onix', sales: 38 },
-      { model: 'Hyundai HB20', sales: 35 },
-      { model: 'Jeep Renegade', sales: 28 },
-      { model: 'Volkswagen T-Cross', sales: 25 }
+      { model: 'BMW M4 CS', sales: 42 },
+      { model: 'Ford Mustang GT', sales: 38 },
+      { model: 'Mercedes EQA SUV', sales: 35 },
     ];
 
     this.newArrivalCars = [
-      { model: 'BYD Dolphin', arrivalDate: '15/05/2024' },
-      { model: 'Toyota Corolla Cross', arrivalDate: '10/05/2024' },
-      { model: 'Cherry Tiggo 7 Pro', arrivalDate: '05/05/2024' },
-      { model: 'Caoa Chery Tiggo 8', arrivalDate: '01/05/2024' }
+      { model: 'Ford Ranger XLS V6', arrivalDate: '05/2025' },
     ];
 
     this.createCharts();

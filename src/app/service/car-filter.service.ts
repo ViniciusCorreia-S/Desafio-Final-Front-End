@@ -29,9 +29,9 @@ export class CarFilterService {
     }
   }
   
-  clearFilters(): void {
-    this.selectedBrands.set([]);
-  }
+  // clearFilters(): void {
+  //   this.selectedBrands.set([]);
+  // }
   
   getAvailableBrands(): CarBrand[] {
     return this.availableBrands;

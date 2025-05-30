@@ -1,8 +1,8 @@
 <div class="car-filter">
-    <h3>Filtrar por Marca</h3>
+    <h3>Filtrar Carros</h3>
     
     <div class="filter-options">
-    @for (brand of availableBrands; track brand) {
+    <!-- @for (brand of availableBrands; track brand) {
         <label class="checkbox-label">
         <input 
             type="checkbox"
@@ -11,11 +11,12 @@
         />
         {{ brand }}
         </label>
-    }
+    } -->
+    <ng-content></ng-content>
     </div>
     
-    <div class="filter-actions">
-    <button 
+    <!-- <div class="filter-actions">
+     <button 
         type="button" 
         class="clear-btn"
         (click)="clearFilters()"
@@ -27,5 +28,5 @@
     <div class="selected-count">
         Marcas selecionadas: {{ carFilterService.getSelectedCount() }}
     </div>
-    </div>
+    </div> -->
 </div>

@@ -169,7 +169,8 @@
     </div>
     
     <div class="form-group">
-      <label for="preferredTime">Horário Preferencial*</label>
+
+      <!-- <label for="preferredTime">Horário Preferencial*</label>
       <select id="preferredTime" formControlName="preferredTime">
         <option value="">Selecione um horário</option>
         <option value="manhã">Manhã (09:00 - 12:00)</option>
@@ -177,8 +178,96 @@
       </select>
       <div class="error-message" *ngIf="testDriveForm.get('preferredTime')?.invalid && testDriveForm.get('preferredTime')?.touched">
         Selecione um horário
-      </div>
-    </div>
+      </div> -->
+
+      
+
+              <h3>Data e Horário</h3>
+              
+              <div class="form-group">
+                <label for="date">Data *</label>
+                <input 
+                  type="date" 
+                  id="date"
+                  formControlName="date"
+                  [min]="minDate"
+                  [max]="maxDate"
+                  (change)="onDateChange()"
+                  [class.error]="testDriveForm.get('date')?.invalid && testDriveForm.get('date')?.touched">
+                <div class="error-message" *ngIf="testDriveForm.get('date')?.invalid && testDriveForm.get('date')?.touched">
+                  Data é obrigatória
+                </div>
+              </div>
+
+              <!-- Seleção de Horário -->
+              <div class="form-group" >
+                <label>Horários Disponíveis *</label>
+                <div class="time-slots">
+                  <button 
+                    type="button"
+                    *ngFor="let slot of availableTimeSlots"
+                    class="time-slot"
+                    [class.selected]="testDriveForm.get('preferredTime')?.value === slot.time"
+                    [class.unavailable]="!slot.available"
+                    [disabled]="!slot.available"
+                    (click)="selectTime(slot.time)">
+                    {{ slot.time }}
+                  </button>
+                </div>
+                <div class="error-message" *ngIf="testDriveForm.get('preferredTime')?.invalid && testDriveForm.get('preferredTime')?.touched">
+                  Selecione um horário
+                </div>
+              </div>
+
+          </div>
+
+        
+
+            <div class="confirmation-actions">
+              <button class="btn btn-primary" (click)="viewAppointments()">
+                Ver Agendamentos
+              </button>
+            </div>
+
+        <!-- Lista de Agendamentos -->
+        <div class="card" *ngIf="currentStep === 'list'">
+          <div class="appointments-header">
+            <h2>Agendamentos</h2>
+            <button class="btn btn-primary" (click)="newAppointment()">
+              Novo Agendamento
+            </button>
+          </div>
+
+          <div class="appointments-list" *ngIf="appointments.length > 0">
+            <div class="appointment-item" *ngFor="let appointment of appointments">
+              <div class="appointment-info">
+                <div class="appointment-datetime">
+                  <div class="date">📅 {{ formatDate(appointment.preferredDate) }}</div>
+                  <div class="time">🕐 {{ appointment.preferredTime }}</div>
+                </div>
+                <div class="appointment-status">
+                  <span class="status-badge" [ngClass]="'status-' + appointment.status">
+                    {{ appointment.status }}
+                  </span>
+                </div>
+              </div>
+              <div class="appointment-actions">
+                <button class="btn btn-small btn-outline" (click)="editAppointment(appointment)">
+                  Editar
+                </button>
+                <button class="btn btn-small btn-danger" (click)="cancelAppointment(appointment.id)">
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="empty-state" *ngIf="appointments.length === 0">
+            <div class="empty-icon">📅</div>
+            <h3>Nenhum agendamento encontrado</h3>
+            <p>Faça seu primeiro agendamento de test drive!</p>
+          </div>
+        </div>
     
     <div class="form-group">
       <label>Possui CNH?*</label>
