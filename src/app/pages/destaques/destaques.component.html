@@ -2,51 +2,10 @@
   <app-header></app-header>
 </header>
 
-<div class="carros-container">
-  <section class="banner">
-    <h1>Concessionária Premium 2024</h1>
-    <p>Os melhores carros com as melhores condições</p>
-  </section>
+<main>
 
-  <!-- Filtros -->
-  <section class="filtros">
-    <select [(ngModel)]="filtro.type" class="filtro-select">
-      <option value="destaque">Destaques</option>
-      <option value="mais-vendidos">Mais Vendidos</option>
-      <option value="recem-chegados">Recém-Chegados</option>
-    </select>
-
-    <input type="text" [(ngModel)]="filtro.brand" placeholder="Filtrar por marca" class="filtro-input">
-
-    <!-- <input type="range" [(ngModel)]="filtro.maxPrice" [max]="200000" [min]="20000" step="5000" class="filtro-range">
-    <span>Preço máximo: {{filtro.maxPrice | currency:'BRL'}}</span> -->
-  </section>
-
-  <!-- Estatísticas -->
-  <div class="stats">
-    <div class="stat-card">
-      <h3>Total de Veículos</h3>
-      <p>{{totalCarros}}</p>
-    </div>
-  </div>
-
-  <!-- Grid de Carros -->
-  <div class="carros-grid">
-    @for (carro of carrosFiltrados; track carro.id) {
-      <app-car-card
-        [carro]="carro" 
-        [badgeClass]="getBadgeClass(carro)" />
-    } @empty {
-      <div class="empty-message">
-        Nenhum carro encontrado com esses filtros
-      </div>
-    }
-  </div>
-
-  <!-- Gráfico (apenas para mais vendidos) -->
-  <!-- @if (filtro.type === 'mais-vendidos' && carrosFiltrados.length > 0) { -->
-    <app-graphics></app-graphics>
-  <!-- } -->
-</div>
+  <app-graphics></app-graphics>
+  
+</main>
 
   <app-footer></app-footer>

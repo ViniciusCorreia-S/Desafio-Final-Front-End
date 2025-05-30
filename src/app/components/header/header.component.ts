@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SideBarComponent } from '../side-bar/side-bar.component';
+import { DataService } from '../../service/data.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ import { SideBarComponent } from '../side-bar/side-bar.component';
 })
 export class HeaderComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dataService: DataService) {}
   
   navigateHome(){
     this.router.navigate(['/home']);
@@ -22,6 +23,7 @@ export class HeaderComponent {
   navigateVehicles(){
     this.router.navigate(['/vehicles']);
     window.scrollTo(0, 0);
+    this.dataService.deselectAllCars();
   }
 
   navigateCompareVehicles(){

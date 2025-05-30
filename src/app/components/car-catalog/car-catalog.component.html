@@ -2,10 +2,19 @@
   <h2>Catálogo de Veículos</h2>
   <p>Selecione os veículos para ver detalhes no dashboard</p>
 
-  <app-car-filter></app-car-filter>
+  <app-car-filter>
+    <select [(ngModel)]="filtro.type" class="filtro-select">
+        <option value="todos">Todos</option>
+        <option value="destaque">Destaques</option>
+        <option value="mais-vendidos">Mais Vendidos</option>
+        <option value="recem-chegados">Recém-Chegados</option>
+      </select>
+
+      <input type="text" [(ngModel)]="filtro.brand" placeholder="Filtrar por marca" class="filtro-input">
+  </app-car-filter>
 
   <div class="results-info">
-    <span>Mostrando {{ filteredCars().length }} de {{ cars.length }} carros</span>
+    <span>Mostrando {{ carrosFiltrados.length }} de {{ filteredCars().length }} carros</span>
     @if (carFilter.getSelectedCount() > 0) {
       <span class="filter-info">
         (Filtrado por: {{ getSelectedBrandsText() }})
@@ -14,25 +23,29 @@
   </div>
 
   <div class="cars-grid">
-    @for (car of filteredCars(); track car.id) {
-    <div class="car-card" ngFor="let car of cars">
+      @for (carro of carrosFiltrados; track carro.id) {
+          <div class="car-card" ngFor="let car of cars">
         <div class="car-header">
           <label class="checkbox-container">
-            <input type="checkbox" [checked]="car.selected" (change)="toggleSelection(car.id)">
+            <input type="checkbox" [checked]="carro.selected" (change)="toggleSelection(carro.id)">
           </label>
-          <h3>{{car.brand}} {{car.model}}</h3>
+          <h3>{{carro.brand}} {{carro.model}}</h3>
         </div>
 
         <div class="car-image">
-          <img [src]="car.imageUrl" [alt]="car.brand + ' ' + car.model">
+          <img [src]="carro.imageUrl" [alt]="carro.brand + ' ' + carro.model">
         </div>
 
         <div class="car-details">
-          <p><strong>Ano:</strong> {{car.year}}</p>
-          <p><strong>Preço:</strong> R$ {{car.price | number:'1.2'}}</p>
+          <p><strong>Ano:</strong> {{carro.year}}</p>
+          <p><strong>Preço:</strong> R$ {{carro.price | number:'1.2'}}</p>
         </div>
       </div>
-    } 
+      } @empty {
+        <div class="empty-message">
+          Nenhum carro encontrado com esses filtros
+        </div>
+      }
   </div>
   
   <div class="dashboard-router">

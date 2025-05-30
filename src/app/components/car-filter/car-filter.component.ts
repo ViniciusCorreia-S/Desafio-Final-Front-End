@@ -16,8 +16,4 @@ export class CarFilterComponent {
   onBrandToggle(brand: CarBrand): void {
     this.carFilterService.toggleBrand(brand);
   }
-  
-  clearFilters(): void {
-    this.carFilterService.clearFilters();
-  }
 }

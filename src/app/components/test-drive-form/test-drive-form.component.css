@@ -70,26 +70,79 @@ input, select, textarea {
   margin-right: 8px;
 }
 
-button {
-  background-color: #0078d3;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 4px;
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.time-slot {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
+}
+
+.time-slot:hover {
+  background-color: #f0f0f0;
+}
+
+.time-slot.selected {
+  background-color: #3498db;
+  color: #ffffff;
+  border-color: #3498db;
+}
+
+.time-slot.disabled {
+  background-color: #bdc3c7;
+  color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+.submit {
+  text-align: center;
+  margin: 50px;
+}
+
+button {
+  background-color:  #ffffff;
+  color: #214D72;
+  border: solid 2px #214D72;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 900;
+  font-family: 'Oswald', sans-serif;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  letter-spacing: 1px;
 }
 
 button:hover {
-  background-color: #004d8c;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
+  background: #214D72;
+  color: #fff;
 }
 
 .error-message {
   color: red;
   font-size: 0.9rem;
   margin-top: 5px;
+}
+
+.success-message {
+  max-width: 800px;
+  margin: 30px auto;
+  margin-bottom: 0;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .confirmation-container {
@@ -302,6 +355,12 @@ button:hover {
       flex-direction: column;
       align-items: flex-start;
       gap: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .time-slots {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

@@ -1,79 +1,79 @@
-<div class="container">
-  <div class="success-message" *ngIf="showSuccess">
-    <div class="confirmation-container">
-      <div class="success-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
-          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
-        </svg>
-      </div>
-      
-      <h1 class="confirmation-title">Test Drive Agendado!</h1>
-      <p class="confirmation-subtitle">
-          Sua solicitação foi recebida com sucesso. Nossa equipe entrará em contato em breve para confirmar todos os detalhes da sua experiência.
-      </p>
+<div class="success-message" *ngIf="showSuccess">
+  <div class="confirmation-container">
+    <div class="success-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+      </svg>
+    </div>
+    
+    <h1 class="confirmation-title">Test Drive Agendado!</h1>
+    <p class="confirmation-subtitle">
+        Sua solicitação foi recebida com sucesso. Nossa equipe entrará em contato em breve para confirmar todos os detalhes da sua experiência.
+    </p>
 
-      <div class="protocol-number">
-          Código: #TD2024-<span id="protocolNumber">{{codigo}}</span>
-      </div>
+    <div class="protocol-number">
+        Código: #TD2024-<span id="protocolNumber">{{codigo}}</span>
+    </div>
 
-      <div class="confirmation-details">
-          <div class="detail-item">
-              <span class="detail-label">Nome:</span>
-              <span class="detail-value" id="customerName">{{this.dataForm.name}}</span>
-          </div>
-          <div class="detail-item">
-              <span class="detail-label">E-mail:</span>
-              <span class="detail-value" id="customerEmail">{{this.dataForm.email}}</span>
-          </div>
-          <div class="detail-item">
-              <span class="detail-label">Telefone:</span>
-              <span class="detail-value" id="customerPhone">{{this.dataForm.phone}}</span>
-          </div>
-          <div class="detail-item">
-              <span class="detail-label">Marca de Interesse:</span>
-              <span class="detail-value" id="selectedBrand">{{this.dataForm.brand}}</span>
-          </div>
-          <div class="detail-item">
-              <span class="detail-label">Modelo:</span>
-              <span class="detail-value" id="selectedModel">{{this.dataForm.bmwModel}} {{this.dataForm.mercedesModel}} {{this.dataForm.fordModel}}</span>
-          </div>
-          <div class="detail-item">
-              <span class="detail-label">Data Preferencial:</span>
-              <span class="detail-value" id="preferredDate">{{this.dataForm.preferredDate}}</span>
-          </div>
-          <div class="detail-item">
-              <span class="detail-label">Horário:</span>
-              <span class="detail-value" id="preferredTime">{{this.dataForm.preferredTime}}</span>
-          </div>
-      </div>
+    <div class="confirmation-details">
+        <div class="detail-item">
+            <span class="detail-label">Nome:</span>
+            <span class="detail-value" id="customerName">{{this.dataForm.name}}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">E-mail:</span>
+            <span class="detail-value" id="customerEmail">{{this.dataForm.email}}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Telefone:</span>
+            <span class="detail-value" id="customerPhone">{{this.dataForm.phone}}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Marca de Interesse:</span>
+            <span class="detail-value" id="selectedBrand">{{this.dataForm.brand}}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Modelo:</span>
+            <span class="detail-value" id="selectedModel">{{this.dataForm.bmwModel}} {{this.dataForm.mercedesModel}} {{this.dataForm.fordModel}}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Data Preferencial:</span>
+            <span class="detail-value" id="preferredDate">{{this.dataForm.date}}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Horário:</span>
+            <span class="detail-value" id="preferredTime">{{successData?.time}}</span>
+        </div>
+    </div>
 
-      <div class="next-steps">
-          <h3>Próximos Passos:</h3>
-          <ol class="steps-list">
-              <li>Nossa equipe analisará sua solicitação em até 24 horas</li>
-              <li>Entraremos em contato via telefone para confirmar disponibilidade</li>
-              <li>Enviaremos um e-mail com todos os detalhes do agendamento</li>
-              <li>No dia do test drive, lembre-se de trazer sua CNH válida</li>
-          </ol>
-      </div>
+    <div class="next-steps">
+        <h3>Próximos Passos:</h3>
+        <ol class="steps-list">
+            <li>Nossa equipe analisará sua solicitação em até 24 horas</li>
+            <li>Entraremos em contato via telefone para confirmar disponibilidade</li>
+            <li>Enviaremos um e-mail com todos os detalhes do agendamento</li>
+            <li>No dia do test drive, lembre-se de trazer sua CNH válida</li>
+        </ol>
+    </div>
 
-      <div class="contact-info">
-          <h4>Precisa de ajuda?</h4>
-          <p><strong>Telefone:</strong> (71) 9 8483-8928</p>
-          <p><strong>WhatsApp:</strong> (71) 9 8483-8928</p>
-          <p><strong>E-mail:</strong> specdrive&commat;concessionaria.com</p>
-      </div>
+    <div class="contact-info">
+        <h4>Precisa de ajuda?</h4>
+        <p><strong>Telefone:</strong> (71) 9 8483-8928</p>
+        <p><strong>WhatsApp:</strong> (71) 9 8483-8928</p>
+        <p><strong>E-mail:</strong> specdrive&commat;concessionaria.com</p>
+    </div>
 
-      <div class="action-buttons">
-          <a (click)="HomeRouter()" class="btn btn-primary">
-              Voltar ao Início
-          </a>
-          <a (click)="backtestDrive()" class="btn btn-secondary">
-              Agendar Outro Test Drive
-          </a>
-      </div>
-  </div>
-  </div>
+    <div class="action-buttons">
+        <a (click)="HomeRouter()" class="btn btn-primary">
+            Voltar ao Início
+        </a>
+        <a (click)="backtestDrive()" class="btn btn-secondary">
+            Agendar Outro Test Drive
+        </a>
+    </div>
+</div>
+</div>
+<div class="container" *ngIf="showSuccessDisable">
   
   <p>Quer sentir a emoção de dirigir o carro dos seus sonhos? Preencha o formulário abaixo e agende um test drive com um de nossos veículos premium. Nossa equipe entrará em contato para confirmar sua experiência.</p>
   
@@ -159,23 +159,27 @@
         Selecione um modelo
       </div>
     </div>
-    
-    <div class="form-group">
-      <label for="preferredDate">Data Preferencial*</label>
-      <input type="date" id="preferredDate" formControlName="preferredDate">
-      <div class="error-message" *ngIf="testDriveForm.get('preferredDate')?.invalid && testDriveForm.get('preferredDate')?.touched">
-        Selecione uma data
+
+    <div class="form-group calendar-container">
+      <label for="date">Data do Test Drive</label>
+      <input type="date" id="date" formControlName="date" [min]="minDate">
+      <div *ngIf="testDriveForm.get('date')?.invalid && testDriveForm.get('date')?.touched" class="error-message">
+        Selecione uma data válida
       </div>
     </div>
     
     <div class="form-group">
-      <label for="preferredTime">Horário Preferencial*</label>
-      <select id="preferredTime" formControlName="preferredTime">
-        <option value="">Selecione um horário</option>
-        <option value="manhã">Manhã (09:00 - 12:00)</option>
-        <option value="tarde">Tarde (13:00 - 18:00)</option>
-      </select>
-      <div class="error-message" *ngIf="testDriveForm.get('preferredTime')?.invalid && testDriveForm.get('preferredTime')?.touched">
+      <label>Horários Disponíveis</label>
+      <div class="time-slots">
+        <div *ngFor="let time of availableTimes" 
+             [class.time-slot]="true"
+             [class.disabled]="isTimeBooked(time)"
+             [class.selected]="isTimeSelected(time)"
+             (click)="selectTime(time)">
+          {{time}}
+        </div>
+      </div>
+      <div *ngIf="testDriveForm.get('date')?.invalid && testDriveForm.get('date')?.touched" class="error-message">
         Selecione um horário
       </div>
     </div>
@@ -212,6 +216,8 @@
       </div>
     </div>
     
-    <button type="submit">Agendar Test Drive</button>
+    <div class="submit">
+      <button type="submit">Agendar Test Drive</button>
+    </div>
   </form>
 </div>

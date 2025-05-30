@@ -1,56 +1,17 @@
-import { Component, Input, computed, signal , OnInit} from '@angular/core';
-// import { Car } from '../../models/Vehicle.model';
-// import { ChartConfiguration } from 'chart.js';
-// import { BaseChartDirective } from 'ng2-charts';
-import { NgModule } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Chart , registerables } from 'chart.js';
 
 @Component({
   selector: 'app-graphics',
-  imports: [CommonModule /*, BaseChartDirective*/],
+  imports: [CommonModule],
   standalone: true,
   templateUrl: './graphics.component.html',
   styleUrl: './graphics.component.css'
 })
 export class GraphicsComponent implements OnInit {
-  // @Input({ required: true }) set carros(value: Car[]) {
-  //   this._carros.set(value);
-  // }
-  
-  // private _carros = signal<Car[]>([]);
-  
-  // chartData = computed(() => {
-  //   const carros = this._carros();
-    
-  //   return {
-  //     labels: carros.map(c => `${c.brand} ${c.model}`),
-  //     datasets: [{
-  //       data: carros.map(c => c.mostSold || 0),
-  //       label: 'Vendas no mês',
-  //       backgroundColor: 'rgba(3, 15, 22, 0.5)',
-  //       borderColor: 'rgba(54, 162, 235, 1)',
-  //       borderWidth: 1
-  //     }]
-  //   };
-  // });
 
-  // chartOptions: ChartConfiguration<'bar'>['options'] = {
-  //   responsive: true,
-  //   scales: {
-  //     x: { 
-  //       title: { display: true, text: 'Modelos' },
-  //       ticks: { autoSkip: false }
-  //     },
-  //     y: { 
-  //       beginAtZero: true,
-  //       title: { display: true, text: 'Vendas no mês' }
-  //     }
-  //   }
-  // };
-
-
-    featuredCars: any[] = [];
+  featuredCars: any[] = [];
   topSellingCars: any[] = [];
   newArrivalCars: any[] = [];
 
@@ -60,26 +21,19 @@ export class GraphicsComponent implements OnInit {
   }
 
   loadData(): void {
-    // Dados simulados - substitua por chamadas à API real
     this.featuredCars = [
-      { model: 'Toyota Corolla', price: 120000, stock: 8 },
-      { model: 'Honda Civic', price: 135000, stock: 5 },
-      { model: 'Volkswagen Golf', price: 110000, stock: 7 }
+      { model: 'BMW M4 CS', price: 1399950, stock: 8 },
+      { model: 'Ford Mustang GT', price: 549000, stock: 5 },
     ];
 
     this.topSellingCars = [
-      { model: 'Fiat Argo', sales: 42 },
-      { model: 'Chevrolet Onix', sales: 38 },
-      { model: 'Hyundai HB20', sales: 35 },
-      { model: 'Jeep Renegade', sales: 28 },
-      { model: 'Volkswagen T-Cross', sales: 25 }
+      { model: 'BMW M4 CS', sales: 42 },
+      { model: 'Ford Mustang GT', sales: 38 },
+      { model: 'Mercedes EQA SUV', sales: 35 },
     ];
 
     this.newArrivalCars = [
-      { model: 'BYD Dolphin', arrivalDate: '15/05/2024' },
-      { model: 'Toyota Corolla Cross', arrivalDate: '10/05/2024' },
-      { model: 'Cherry Tiggo 7 Pro', arrivalDate: '05/05/2024' },
-      { model: 'Caoa Chery Tiggo 8', arrivalDate: '01/05/2024' }
+      { model: 'Ford Ranger XLS V6', arrivalDate: '05/2025' },
     ];
 
     this.createCharts();

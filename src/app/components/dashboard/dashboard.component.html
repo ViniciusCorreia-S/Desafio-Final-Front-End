@@ -26,8 +26,8 @@
       <table>
         <tbody *ngFor="let car of selectedCars">
           <tr style="background-color: transparent;">
-            <th style="background-color: transparent;">&nbsp;</th>
-            <td style="display: flex; justify-content: center; background-color: transparent;"><img [src]="car.imageUrl" alt="{{car.brand}} {{car.model}}" class="car-image"></td>
+            <th style="background-color: transparent; padding: 0;">&nbsp;</th>
+            <td style="display: flex; justify-content: center; background-color: transparent; width: 100%; padding: 0;"><img [src]="car.imageUrl" alt="{{car.brand}} {{car.model}}" class="car-image"></td>
           </tr>
           <tr>
             <th>Marca</th>
@@ -65,7 +65,6 @@
             <th>Velocidade máxima</th>
             <td>{{car.vmax}} km/h</td>
           </tr>
-          <tr><td colspan="2"><hr></td></tr>
         </tbody>
       </table>
     </div>
