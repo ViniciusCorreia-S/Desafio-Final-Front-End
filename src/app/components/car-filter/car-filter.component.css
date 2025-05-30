@@ -4,7 +4,6 @@
 
 .car-filter {
     padding: 16px;
-    /* border: 1px solid #ffffff; */
     border-radius: 8px;
     margin-bottom: 16px;
     background-color: #214D72;
@@ -16,63 +15,4 @@
     flex-wrap: wrap;
     gap: 12px;
     margin: 12px 0;
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    padding: 8px 12px;
-    border: 1px solid #CBCBCB;
-    border-radius: 4px;
-    background-color: #ffffff;
-    color: #214D72;
-    transition: background-color 0.3s;
-}
-
-.checkbox-label input[type="checkbox"] {
-    display: none;
-}
-
-.checkbox-label:hover {
-    background-color: #CBCBCB;
-    border: solid 1px #214D72;
-    color: #214D72;
-}
-
-.filter-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 16px;
-    padding-top: 12px;
-    border-top: 1px solid #ffffff;
-}
-
-.clear-btn {
-    padding: 8px 16px;
-    background-color: #db1414;
-    border: solid 1px #ffffff;
-    border-radius: 4px;
-    color: #ffffff;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.clear-btn:hover:not(:disabled) {
-    background-color: #fc5252;
-}
-
-.clear-btn:disabled {
-    background-color: transparent;
-    cursor: not-allowed;
-    color: #ffffff;
-    border: solid 1px #ffffff;
-}
-
-.selected-count {
-    font-size: 14px;
-    color: #ffffffff;
-    font-weight: 500;
 }

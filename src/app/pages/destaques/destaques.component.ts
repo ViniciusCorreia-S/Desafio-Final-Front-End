@@ -5,14 +5,13 @@ import { CommonModule } from '@angular/common';
 import { DataService } from '../../service/data.service';
 import { FormsModule } from '@angular/forms';
 import { GraphicsComponent } from '../../components/graphics/graphics.component';
-import { CarCardComponent } from '../../components/car-card/car-card.component';
 import { ReactiveFormsModule , FormControl , NgModel } from '@angular/forms';
 import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-destaques',
-  imports: [CommonModule, GraphicsComponent, CarCardComponent, ReactiveFormsModule, FormsModule, HeaderComponent, FooterComponent],
+  imports: [CommonModule, GraphicsComponent, ReactiveFormsModule, FormsModule, HeaderComponent, FooterComponent],
   standalone: true,
   templateUrl: './destaques.component.html',
   styleUrl: './destaques.component.css'

@@ -24,5 +24,7 @@ export class DashboardComponent implements OnInit {
 
   backRouter() {
     this.router.navigate(['/vehicles']);
+    this.dataService.deselectAllCars();
+    window.scrollTo(0, 0);
   }
 }

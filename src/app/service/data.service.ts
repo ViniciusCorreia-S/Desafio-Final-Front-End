@@ -21,6 +21,7 @@ export class DataService {
       motorizationL: 4.4,
       acceleration: 3.8,
       vmax: 290,
+      all: true,
       featured: false,
       mostSold: false,
       recent: false,
@@ -40,6 +41,7 @@ export class DataService {
       motorizationL: 3.0,
       acceleration: 3.4,
       vmax: 302,
+      all: true,
       featured: true,
       mostSold: true,
       recent: false,
@@ -59,6 +61,7 @@ export class DataService {
       motorizationL: 5.0,
       acceleration: 4.3,
       vmax: 250,
+      all: true,
       featured: true,
       mostSold: true,
       recent: false,
@@ -78,6 +81,7 @@ export class DataService {
       motorizationL: 3.0,
       acceleration: 9.2,
       vmax: 187,
+      all: true,
       featured: false,
       mostSold: false,
       recent: true,
@@ -97,6 +101,7 @@ export class DataService {
       motorizationL: 66.5,
       acceleration: 8.6,
       vmax: 160,
+      all: true,
       featured: false,
       mostSold: true,
       recent: false,
@@ -116,6 +121,7 @@ export class DataService {
       motorizationL: 2.0,
       acceleration: 4.9,
       vmax: 250,
+      all: true,
       featured: false,
       mostSold: false,
       recent: false,
@@ -182,6 +188,7 @@ export class DataService {
     return this.carros.filter((carro: any) => {
       let match = true;
       
+      if (filter.type === 'todos' && !carro.all) { match = false };
       if (filter.type === 'destaque' && !carro.featured) match = false;
       if (filter.type === 'mais-vendidos' && !carro.mostSold) match = false;
       if (filter.type === 'recem-chegados' && !carro.recent) match = false;
@@ -191,14 +198,5 @@ export class DataService {
       return match;
     });
   }
-
-//   addCarro(novoCarro: Omit<Car, 'id'>) {
-//   const newCar = { ...novoCarro, id: this.generateId() };
-//   this.cars.next([...this.cars.value, newCar]);
-// }
-
-//   private generateId(): number {
-//   return Math.max(...this.cars.value.map(c => c.id), 0) + 1;
-// }
 }
 

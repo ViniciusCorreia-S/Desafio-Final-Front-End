@@ -12,6 +12,7 @@ export interface Car {
   motorizationL: number;
   acceleration: number;
   vmax: number;
+  all: boolean;
   featured: boolean;
   mostSold: boolean;
   recent?: boolean;
@@ -21,7 +22,7 @@ export interface Car {
 }
 
 export type CarroFilter = {
-  type?: 'destaque' | 'mais-vendidos' | 'recem-chegados';
+  type?: 'todos' | 'destaque' | 'mais-vendidos' | 'recem-chegados';
   brand?: string;
   maxPrice?: number;
 };

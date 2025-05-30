@@ -13,7 +13,7 @@
     overflow: hidden;
 }
 
-.catalog-content::before {
+.catalog-content::after {
     content: '';
     position: absolute;
     top: -70px;
@@ -24,7 +24,7 @@
     border-radius: 50%;
 }
 
-.catalog-content::after {
+.catalog-content::before {
     content: '';
     position: absolute;
     bottom: -80px;
@@ -80,7 +80,7 @@ p {
 }
 
 .brand-item {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #214e7269;
     border-radius: 10px;
     padding: 40px;
     width: 300px;
@@ -92,7 +92,7 @@ p {
 
 .brand-item:hover {
     transform: translateY(-10px);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #214e72b4;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
