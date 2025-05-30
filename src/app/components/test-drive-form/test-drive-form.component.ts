@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup , Validators , ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup , Validators , ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxMaskDirective } from 'ngx-mask';
 import { Router } from '@angular/router';
 
@@ -16,7 +16,7 @@ interface SuccessData {
 
 @Component({
   selector: 'app-test-drive-form',
-  imports: [ CommonModule , ReactiveFormsModule , NgxMaskDirective ],
+  imports: [ CommonModule , ReactiveFormsModule , FormsModule , NgxMaskDirective ],
   templateUrl: './test-drive-form.component.html',
   styleUrls: ['./test-drive-form.component.css']
 })

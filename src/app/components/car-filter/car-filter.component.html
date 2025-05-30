@@ -2,8 +2,38 @@
     <h3>Filtrar Carros</h3>
     
     <div class="filter-options">
+<<<<<<< HEAD
     
     <ng-content></ng-content>
     </div>
     
+=======
+    <!-- @for (brand of availableBrands; track brand) {
+        <label class="checkbox-label">
+        <input 
+            type="checkbox"
+            [checked]="carFilterService.isBrandSelected(brand)"
+            (change)="onBrandToggle(brand)"
+        />
+        {{ brand }}
+        </label>
+    } -->
+    <ng-content></ng-content>
+    </div>
+    
+    <!-- <div class="filter-actions">
+     <button 
+        type="button" 
+        class="clear-btn"
+        (click)="clearFilters()"
+        [disabled]="carFilterService.getSelectedCount() === 0"
+    >
+        Limpar Filtros
+    </button>
+    
+    <div class="selected-count">
+        Marcas selecionadas: {{ carFilterService.getSelectedCount() }}
+    </div>
+    </div> -->
+>>>>>>> 4ef6222ad5071f095578441ce667d7860c20a998
 </div>
