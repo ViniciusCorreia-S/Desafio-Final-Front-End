@@ -141,9 +141,16 @@ export class TestDriveFormComponent implements OnInit {
   existingBookings: Booking[] = [
     { date: this.getFormattedDate(1), time: '09:00'},
     { date: this.getFormattedDate(1), time: '10:30'},
-    { date: this.getFormattedDate(2), time: '14:00'},
+    { date: this.getFormattedDate(1), time: '14:00'},
     { date: this.getFormattedDate(2), time: '15:30'},
+    { date: this.getFormattedDate(2), time: '11:30'},
+    { date: this.getFormattedDate(2), time: '16:00'},
     { date: this.getFormattedDate(3), time: '11:00'},
+    { date: this.getFormattedDate(3), time: '09:30'},
+    { date: this.getFormattedDate(5), time: '14:30'},
+    { date: this.getFormattedDate(5), time: '11:00'},
+    { date: this.getFormattedDate(6), time: '10:30'},
+    { date: this.getFormattedDate(6), time: '15:00'},
   ];
 
   availableTimes = [

@@ -28,15 +28,7 @@ export class CarFilterService {
       this.selectedBrands.set([...current, brand]);
     }
   }
-<<<<<<< HEAD
 
-=======
-  
-  // clearFilters(): void {
-  //   this.selectedBrands.set([]);
-  // }
-  
->>>>>>> 4ef6222ad5071f095578441ce667d7860c20a998
   getAvailableBrands(): CarBrand[] {
     return this.availableBrands;
   }

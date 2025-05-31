@@ -80,11 +80,7 @@ p {
 }
 
 .brand-item {
-<<<<<<< HEAD
     background-color: #2470ad69;
-=======
-    background-color: #214e7269;
->>>>>>> 4ef6222ad5071f095578441ce667d7860c20a998
     border-radius: 10px;
     padding: 40px;
     width: 300px;
@@ -96,11 +92,7 @@ p {
 
 .brand-item:hover {
     transform: translateY(-10px);
-<<<<<<< HEAD
     background-color: #246fadbd;
-=======
-    background-color: #214e72b4;
->>>>>>> 4ef6222ad5071f095578441ce667d7860c20a998
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 

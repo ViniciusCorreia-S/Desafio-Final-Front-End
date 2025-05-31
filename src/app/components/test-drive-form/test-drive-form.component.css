@@ -30,6 +30,7 @@ p {
 
 .form-group {
   margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 .form-group a {
@@ -286,28 +287,39 @@ button:hover {
   transition: all 0.3s ease;
   min-width: 180px;
   justify-content: center;
+  font-family: 'Oswald', sans-serif;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
+  background-color:  #616161;
+  color: #ffffff;
+  border: solid 2px #ffffff;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
+  background: #214D72;
+  color: #fff;
 }
 
 .btn-secondary {
-  background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
+   background-color:  #ffffff;
+  color: #214D72;
+  border: solid 2px #214D72;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
 .btn-secondary:hover {
-  background: #667eea;
-  color: white;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
+  background: #214D72;
+  color: #fff;
 }
 
 .contact-info {
