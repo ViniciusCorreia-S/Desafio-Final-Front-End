@@ -38,4 +38,8 @@ export class SideBarComponent {
   testDrive() {
     this.router.navigate(['/test-drive']);
   }
+
+  destaques() {
+    this.router.navigate(['/destaques']);
+  }
 }
